@@ -1,0 +1,21 @@
+﻿@model DentApp.MVC.ViewModels.LoginViewModel
+<form asp-controller="Account" asp-action="Login" method="post" class="u-full-width" role="form">
+    <div>
+        <div asp-validation-summary="All"></div>
+        <div>            
+            @Html.TextBoxFor(model => model.LoginBag.UserName)
+        </div>
+        <input type="hidden" id="ReturnUrl" asp-for="LoginBag.ReturnUrl" />
+        <div>
+            @Html.PasswordFor(model => model.LoginBag.Password)
+        </div>
+        <div>
+            @Html.CheckBoxFor(model => model.LoginBag.RemindMe)
+        </div>
+        <div>
+            <div>
+                <input type="submit" value="Login" class="button-primary" />
+            </div>
+        </div>
+    </div>
+</form>
