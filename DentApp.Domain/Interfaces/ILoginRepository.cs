@@ -3,7 +3,6 @@
 namespace DentApp.Domain.Interfaces
 {
     public interface ILoginRepository
-    {
-        Login get
+    {        
     }
 }

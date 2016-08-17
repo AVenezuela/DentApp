@@ -3,6 +3,7 @@
 
   "dependencies": {
     "DentApp.Domain": "1.0.0-*",
+    "Microsoft.IdentityModel.Protocols": "2.0.0",
     "NETStandard.Library": "1.6.0"
   },
 

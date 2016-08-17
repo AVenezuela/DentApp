@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.IdentityModel.Protocols;
 
 namespace DentApp.Infra.Data.Context
 {
@@ -18,9 +19,8 @@ namespace DentApp.Infra.Data.Context
         private static readonly IMongoDatabase _database;
 
         static MongoDBContext()
-        {
-            var connectionString = ConfigurationManager.ConnectionStrings[CONNECTION_STRING_NAME].ConnectionString;
-            _client = new MongoClient(connectionString);
+        {            
+            _client = new MongoClient();
             _database = _client.GetDatabase(DATABASE_NAME);
         }
 
