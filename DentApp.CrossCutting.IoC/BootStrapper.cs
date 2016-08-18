@@ -13,6 +13,7 @@ using DentApp.Domain.Interfaces.Repository;
 using DentApp.Infra.Data.Repository;
 using DentApp.Infra.Data.Context;
 using DentApp.Domain.Services;
+using MongoDB.Driver;
 
 namespace DentApp.CrossCutting.IoC
 {
@@ -41,7 +42,14 @@ namespace DentApp.CrossCutting.IoC
             container.Register<ILoginService, LoginService>(Lifestyle.Singleton);
             container.Register<ILoginRepository, LoginRepository>(Lifestyle.Singleton);
 
+            container.Register<MongoDBContextOptions>(Lifestyle.Singleton);
+            container.RegisterInitializer<MongoDBContextOptions>(options => 
+            {
+                options.ConnectionString = "mongodb://localhost:27017";
+                options.DataBaseName = "dentapp";
+            });
             container.Register<MongoDBContext>(Lifestyle.Singleton);
+            
 
             container.Register(typeof (IBaseRepository<>), typeof (BaseRepository<>));
 

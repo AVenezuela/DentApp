@@ -1954,6 +1954,7 @@
           "DentApp.Domain": "1.0.0",
           "DentApp.Infra.Data": "1.0.0",
           "DentApp.Security": "1.0.0",
+          "mongocsharpdriver": "2.3.0-beta1",
           "NETStandard.Library": "1.6.0",
           "SimpleInjector.Integration.AspNetCore.Mvc": "3.2.3"
         },

@@ -7813,7 +7813,8 @@
       "DentApp.Infra.Data >= 1.0.0-*",
       "DentApp.Security >= 1.0.0-*",
       "NETStandard.Library >= 1.6.0",
-      "SimpleInjector.Integration.AspNetCore.Mvc >= 3.2.3"
+      "SimpleInjector.Integration.AspNetCore.Mvc >= 3.2.3",
+      "mongocsharpdriver >= 2.3.0-beta1"
     ],
     ".NETStandard,Version=v1.6": []
   },
