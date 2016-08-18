@@ -13,6 +13,7 @@ using SimpleInjector;
 using SimpleInjector.Integration.AspNetCore.Mvc;
 using DentApp.Security;
 using DentApp.CrossCutting.IoC;
+using SimpleInjector.Integration.AspNetCore;
 
 namespace DentApp.MVC
 {
@@ -44,8 +45,8 @@ namespace DentApp.MVC
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton<IIdentityHelper, IdentityHelper>();
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            //services.AddSingleton<IIdentityHelper, IdentityHelper>();
 
             services.AddSingleton<IControllerActivator>(new SimpleInjectorControllerActivator(container));
             services.AddSingleton<IViewComponentActivator>(new SimpleInjectorViewComponentActivator(container));
@@ -67,8 +68,6 @@ namespace DentApp.MVC
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            BootStrapper.RegisterServices(app, container);
-
             loggerFactory
                 .WithFilter(new FilterLoggerSettings
                     {
@@ -84,6 +83,8 @@ namespace DentApp.MVC
             loggerFactory.AddTraceSource(testSwitch, new TextWriterTraceListener(writer: Console.Out));
             
             loggerFactory.AddDebug();
+
+            BootStrapper.RegisterServices(app, container);            
 
             app.UseSession();
             app.Use(async (context, next) =>
@@ -130,7 +131,7 @@ namespace DentApp.MVC
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Account}/{action=Login}/{id?}");
-            });
+            });           
         }
     }
 }

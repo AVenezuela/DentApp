@@ -30,7 +30,8 @@
     "System.Diagnostics.TextWriterTraceListener": "4.0.0",
     "System.Diagnostics.TraceSource": "4.0.0",
     "SimpleInjector.Integration.AspNetCore.Mvc": "3.2.3",
-    "DentApp.CrossCutting.IoC": "1.0.0-*"
+    "DentApp.CrossCutting.IoC": "1.0.0-*",
+    "DentApp.Application": "1.0.0-*"
   },
 
   "tools": {

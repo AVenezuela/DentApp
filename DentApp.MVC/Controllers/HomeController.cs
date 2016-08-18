@@ -7,9 +7,9 @@ using Microsoft.Extensions.Logging;
 
 namespace DentApp.MVC.Controllers
 {
-    public class HomeController : BaseController<HomeController>
+    public class HomeController : BaseController
     {
-        public HomeController(ILogger<HomeController> logger) : base(logger)
+        public HomeController()
         {
 
         }

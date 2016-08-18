@@ -9,15 +9,15 @@ using Microsoft.Extensions.Logging;
 
 namespace DentApp.MVC.Controllers
 {
-    public class BaseController<T> : Controller
+    public class BaseController : Controller
     {
-        private readonly ILogger<T> _logger;
+        private readonly ILogger _logger;
 
         public BaseController(
-            ILogger<T> logger
+            
             )
         {
-            _logger = logger;
+            //_logger = logger;
         }
     }
 }

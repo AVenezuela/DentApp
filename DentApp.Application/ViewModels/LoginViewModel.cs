@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using DentApp.Domain.Interfaces;
 using DentApp.Domain.Entities;
 
-namespace DentApp.MVC.ViewModels
+namespace DentApp.Application.ViewModels
 {
     public class LoginViewModel
     {

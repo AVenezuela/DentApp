@@ -9,14 +9,18 @@ using MongoDB.Driver;
 
 namespace DentApp.Infra.Data.Repository
 {
-    public class BaseRepositoryy<TEntity> : IBaseRepository<TEntity> where TEntity : class
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
         protected MongoDBContext _mongoDBContext;
         protected IMongoCollection<TEntity> _collection;        
 
-        public BaseRepositoryy(MongoDBContext context, string collectionName)
+        public BaseRepository(MongoDBContext context)
         {
-            _mongoDBContext = context;
+            _mongoDBContext = context;            
+        }
+
+        protected void SetCollection(string collectionName)
+        {
             _collection = _mongoDBContext.DataBase.GetCollection<TEntity>(collectionName);
         }
 

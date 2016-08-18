@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace DentApp.Infra.Data.Repository
 {
-    public class LoginRepository : BaseRepositoryy<User>, ILoginRepository
+    public class LoginRepository : BaseRepository<User>, ILoginRepository
     {
         public LoginRepository(MongoDBContext context)
-            : base(context, "users")
+            : base(context)
         {
-
+          base.SetCollection("users");
         }
 
         public async Task<User> doLogin(Login login)

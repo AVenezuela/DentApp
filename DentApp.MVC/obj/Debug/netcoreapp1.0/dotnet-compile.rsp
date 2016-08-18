@@ -97,6 +97,9 @@
 --reference:C:\Users\andre\.nuget\packages\Microsoft.Extensions.PlatformAbstractions\1.0.0\lib\netstandard1.3\Microsoft.Extensions.PlatformAbstractions.dll
 --reference:C:\Users\andre\.nuget\packages\Microsoft.Extensions.Primitives\1.0.0\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll
 --reference:C:\Users\andre\.nuget\packages\Microsoft.Extensions.WebEncoders\1.0.0\lib\netstandard1.0\Microsoft.Extensions.WebEncoders.dll
+--reference:C:\Users\andre\.nuget\packages\Microsoft.IdentityModel.Logging\1.0.0\lib\netstandard1.4\Microsoft.IdentityModel.Logging.dll
+--reference:C:\Users\andre\.nuget\packages\Microsoft.IdentityModel.Protocols\2.0.0\lib\netstandard1.4\Microsoft.IdentityModel.Protocols.dll
+--reference:C:\Users\andre\.nuget\packages\Microsoft.IdentityModel.Tokens\5.0.0\lib\netstandard1.4\Microsoft.IdentityModel.Tokens.dll
 --reference:C:\Users\andre\.nuget\packages\Microsoft.Net.Http.Headers\1.0.0\lib\netstandard1.1\Microsoft.Net.Http.Headers.dll
 --reference:C:\Users\andre\.nuget\packages\Microsoft.VisualBasic\10.0.1\ref\netstandard1.1\Microsoft.VisualBasic.dll
 --reference:C:\Users\andre\.nuget\packages\Microsoft.VisualStudio.Web.BrowserLink.Loader\14.0.0\lib\netstandard1.5\Microsoft.VisualStudio.Web.BrowserLink.Loader.dll
@@ -131,6 +134,7 @@
 --reference:C:\Users\andre\.nuget\packages\System.Collections.Concurrent\4.0.12\ref\netstandard1.3\System.Collections.Concurrent.dll
 --reference:C:\Users\andre\.nuget\packages\System.Collections.Immutable\1.2.0\lib\netstandard1.0\System.Collections.Immutable.dll
 --reference:C:\Users\andre\.nuget\packages\System.Collections.NonGeneric\4.0.1\ref\netstandard1.3\System.Collections.NonGeneric.dll
+--reference:C:\Users\andre\.nuget\packages\System.Collections.Specialized\4.0.1\ref\netstandard1.3\System.Collections.Specialized.dll
 --reference:C:\Users\andre\.nuget\packages\System.ComponentModel\4.0.1\ref\netstandard1.0\System.ComponentModel.dll
 --reference:C:\Users\andre\.nuget\packages\System.ComponentModel.Annotations\4.1.0\ref\netstandard1.4\System.ComponentModel.Annotations.dll
 --reference:C:\Users\andre\.nuget\packages\System.ComponentModel.Primitives\4.1.0\ref\netstandard1.0\System.ComponentModel.Primitives.dll
@@ -149,6 +153,7 @@
 --reference:C:\Users\andre\.nuget\packages\System.Globalization\4.0.11\ref\netstandard1.3\System.Globalization.dll
 --reference:C:\Users\andre\.nuget\packages\System.Globalization.Calendars\4.0.1\ref\netstandard1.3\System.Globalization.Calendars.dll
 --reference:C:\Users\andre\.nuget\packages\System.Globalization.Extensions\4.0.1\ref\netstandard1.3\System.Globalization.Extensions.dll
+--reference:C:\Users\andre\.nuget\packages\System.IdentityModel.Tokens.Jwt\5.0.0\lib\netstandard1.4\System.IdentityModel.Tokens.Jwt.dll
 --reference:C:\Users\andre\.nuget\packages\System.IO\4.1.0\ref\netstandard1.5\System.IO.dll
 --reference:C:\Users\andre\.nuget\packages\System.IO.Compression\4.1.0\ref\netstandard1.3\System.IO.Compression.dll
 --reference:C:\Users\andre\.nuget\packages\System.IO.Compression.ZipFile\4.0.1\ref\netstandard1.3\System.IO.Compression.ZipFile.dll
@@ -192,6 +197,8 @@
 --reference:C:\Users\andre\.nuget\packages\System.Runtime.Serialization.Primitives\4.1.1\ref\netstandard1.3\System.Runtime.Serialization.Primitives.dll
 --reference:C:\Users\andre\.nuget\packages\System.Security.Claims\4.0.1\ref\netstandard1.3\System.Security.Claims.dll
 --reference:C:\Users\andre\.nuget\packages\System.Security.Cryptography.Algorithms\4.2.0\ref\netstandard1.6\System.Security.Cryptography.Algorithms.dll
+--reference:C:\Users\andre\.nuget\packages\System.Security.Cryptography.Cng\4.2.0\ref\netstandard1.6\System.Security.Cryptography.Cng.dll
+--reference:C:\Users\andre\.nuget\packages\System.Security.Cryptography.Csp\4.0.0\ref\netstandard1.3\System.Security.Cryptography.Csp.dll
 --reference:C:\Users\andre\.nuget\packages\System.Security.Cryptography.Encoding\4.0.0\ref\netstandard1.3\System.Security.Cryptography.Encoding.dll
 --reference:C:\Users\andre\.nuget\packages\System.Security.Cryptography.Primitives\4.0.0\ref\netstandard1.3\System.Security.Cryptography.Primitives.dll
 --reference:C:\Users\andre\.nuget\packages\System.Security.Cryptography.X509Certificates\4.1.0\ref\netstandard1.4\System.Security.Cryptography.X509Certificates.dll
@@ -211,8 +218,10 @@
 --reference:C:\Users\andre\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\andre\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\andre\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
+--reference:C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\bin\Debug\netstandard1.6\DentApp.Application.dll
 --reference:C:\Users\andre\Documents\Projetos\DentApp\DentApp.CrossCutting.IoC\bin\Debug\netstandard1.6\DentApp.CrossCutting.IoC.dll
 --reference:C:\Users\andre\Documents\Projetos\DentApp\DentApp.Domain\bin\Debug\netstandard1.6\DentApp.Domain.dll
+--reference:C:\Users\andre\Documents\Projetos\DentApp\DentApp.Infra.Data\bin\Debug\netstandard1.6\DentApp.Infra.Data.dll
 --reference:C:\Users\andre\Documents\Projetos\DentApp\DentApp.Security\bin\Debug\netstandard1.6\DentApp.Security.dll
 --resource:"C:\Users\andre\Documents\Projetos\DentApp\DentApp.MVC\obj\Debug\netcoreapp1.0\DentApp.MVCdotnet-compile.deps.json",DentApp.MVC.deps.json
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.MVC\Program.cs
@@ -220,4 +229,3 @@ C:\Users\andre\Documents\Projetos\DentApp\DentApp.MVC\Startup.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.MVC\Controllers\AccountController.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.MVC\Controllers\BaseController.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.MVC\Controllers\HomeController.cs
-C:\Users\andre\Documents\Projetos\DentApp\DentApp.MVC\ViewModels\LoginViewModel.cs

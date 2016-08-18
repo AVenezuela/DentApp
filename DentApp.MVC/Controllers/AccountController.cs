@@ -6,20 +6,23 @@ using Microsoft.AspNetCore.Mvc;
 using DentApp.Domain.Entities;
 using Microsoft.Extensions.Logging;
 using DentApp.Security;
-using DentApp.MVC.ViewModels;
+using DentApp.Application.ViewModels;
+using DentApp.Application.Interfaces;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace DentApp.MVC.Controllers
 {
-    public class AccountController : BaseController<HomeController>
+    public class AccountController : BaseController
     {
+        private readonly ILoginAppService _loginAppService;
         private readonly IIdentityHelper _identityHelper;
 
         public AccountController(
-            IIdentityHelper identityHelper,
-            ILogger<HomeController> logger) : base(logger)
-        {            
+            ILoginAppService loginAppService,
+            IIdentityHelper identityHelper)
+        {
+            _loginAppService = loginAppService;
             _identityHelper = identityHelper;
         }
 
@@ -27,7 +30,7 @@ namespace DentApp.MVC.Controllers
         [HttpGet]
         public IActionResult Login([FromQuery]string ReturnUrl)
         {
-            LoginViewModel model = new ViewModels.LoginViewModel()
+            LoginViewModel model = new LoginViewModel()
             {
                 LoginBag = new Login(),
                 ReturnUrl = string.IsNullOrEmpty(ReturnUrl) ? "/" : ReturnUrl
@@ -42,17 +45,18 @@ namespace DentApp.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var Id = 10;
+                var user = await _loginAppService.doLogin(loginInfo);
 
-                if (Id > 0)
+                if (!object.ReferenceEquals(user, null))
                 {
                     var Claims = new Dictionary<string, string>()
                     {
-                        ["Id"] = Id.ToString()
+                        ["Id"] = user.Id.ToString()
                     };
-                    var principal = _identityHelper.CreatePrincipal(loginInfo.LoginBag.UserName, "", Claims);
+                    var principal = _identityHelper.CreatePrincipal(user.Login.UserName, "", Claims);
 
                     await HttpContext.Authentication.SignInAsync("DentAppCookieMiddlewareInstance", principal);
+                    loginInfo.ReturnUrl = "Home/Index";
                 }
             }
             else
