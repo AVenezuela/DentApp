@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "b9e160a0487002eee9d8f0cad6220d124c744768"
+    "signature": "617c4775c8085e98d31c9d31995390ad52f629ee"
   },
   "compilationOptions": {
     "defines": [
@@ -37,7 +37,9 @@
           "Microsoft.NETCore.App": "1.0.0",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
           "System.Diagnostics.TextWriterTraceListener": "4.0.0",
-          "System.Diagnostics.TraceSource": "4.0.0"
+          "System.Diagnostics.TraceSource": "4.0.0",
+          "SimpleInjector.Integration.AspNetCore.Mvc": "3.2.3",
+          "DentApp.CrossCutting.IoC": "1.0.0"
         },
         "runtime": {
           "DentApp.MVC.dll": {}
@@ -1639,6 +1641,68 @@
           "lib/netstandard1.0/NuGet.Versioning.dll": {}
         }
       },
+      "NuSpec.ReferenceGenerator/2.0.0-beta-bld14": {},
+      "SimpleInjector/3.2.0": {
+        "dependencies": {
+          "System.ComponentModel": "4.0.1",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Diagnostics.Tools": "4.0.1",
+          "System.Globalization": "4.0.11",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "runtime": {
+          "lib/netstandard1.6/SimpleInjector.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/SimpleInjector.dll": {}
+        }
+      },
+      "SimpleInjector.Extensions.ExecutionContextScoping/3.2.0": {
+        "dependencies": {
+          "SimpleInjector": "3.2.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/SimpleInjector.Extensions.ExecutionContextScoping.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/SimpleInjector.Extensions.ExecutionContextScoping.dll": {}
+        }
+      },
+      "SimpleInjector.Integration.AspNetCore/3.2.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "1.0.0",
+          "NuSpec.ReferenceGenerator": "2.0.0-beta-bld14",
+          "SimpleInjector": "3.2.0",
+          "SimpleInjector.Extensions.ExecutionContextScoping": "3.2.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/SimpleInjector.Integration.AspNetCore.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/SimpleInjector.Integration.AspNetCore.dll": {}
+        }
+      },
+      "SimpleInjector.Integration.AspNetCore.Mvc/3.2.3": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.Razor": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
+          "NuSpec.ReferenceGenerator": "2.0.0-beta-bld14",
+          "SimpleInjector.Integration.AspNetCore": "3.2.1"
+        },
+        "runtime": {
+          "lib/netstandard1.6/SimpleInjector.Integration.AspNetCore.Mvc.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/SimpleInjector.Integration.AspNetCore.Mvc.dll": {}
+        }
+      },
       "System.Collections.NonGeneric/4.0.1": {
         "dependencies": {
           "System.Diagnostics.Debug": "4.0.11",
@@ -1801,6 +1865,18 @@
         },
         "compile": {
           "lib/netstandard1.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "DentApp.CrossCutting.IoC/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "SimpleInjector.Integration.AspNetCore.Mvc": "3.2.3"
+        },
+        "runtime": {
+          "DentApp.CrossCutting.IoC.dll": {}
+        },
+        "compile": {
+          "DentApp.CrossCutting.IoC.dll": {}
         }
       },
       "DentApp.Domain/1.0.0": {
@@ -3979,6 +4055,31 @@
       "serviceable": true,
       "sha512": "sha512-Stok+SI5lWxOkTgZZM7jT4xuAZogm5+j85mKJeHSXb8o0OAbB+qDX9jkdM2wIEnjoR8R29J0nQYwk2Kl2lWFpA=="
     },
+    "NuSpec.ReferenceGenerator/2.0.0-beta-bld14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4glYZM9mf2HMxUvyZD01f1Kkgk4wygEHPB2m0WhVMlrCPfMhNiO+CNi4U6xZhKoJ5H+JL0AR+IgfPcUmd6Md9w=="
+    },
+    "SimpleInjector/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w1pTOi9aS7cr/n2lZSocpOFPSQCF4vluffNGnNrxdcklk56P+xlMb0wQETrE5jPuzHpU31MdRP31nqtXoHhYVg=="
+    },
+    "SimpleInjector.Extensions.ExecutionContextScoping/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6fr13/82zqTVhtKT65zTEvAhN7SM9fcQUPfBIG/spOpTFbtegcMKxLGkhiLQjWyLWxc1HXmhxoJUXsmzY04tmA=="
+    },
+    "SimpleInjector.Integration.AspNetCore/3.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IPlksJvKYNAqu0DUjlWsK38IsexcRd9txWsDHrJEV7bPbYgZ8yMTZ6/VW9gnhwa6NjKEEKjkN7UkianQWBAVTg=="
+    },
+    "SimpleInjector.Integration.AspNetCore.Mvc/3.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YdWcZm9NukIgFDH+8kb+rfSl+hLGN4yayqqJQC9+4vqy44baJEp3jV9jPCfO7a36rmAII6XABGIbrJFn0PilGw=="
+    },
     "System.Collections.NonGeneric/4.0.1": {
       "type": "package",
       "serviceable": true,
@@ -4028,6 +4129,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-TWZnuiJgPDAEEUfobD7njXvSVR2Toz+jvKWds6yL4oSztmKQfnWzucczjzA+6Dv1bktBdY71sZW1YN0X6m9chQ=="
+    },
+    "DentApp.CrossCutting.IoC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "DentApp.Domain/1.0.0": {
       "type": "project",

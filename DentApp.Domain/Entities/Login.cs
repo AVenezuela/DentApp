@@ -14,9 +14,9 @@ namespace DentApp.Domain.Entities
         [Required(ErrorMessage ="Informar a senha")]
         public string Password { get; set; }
 
-        public bool RemindMe { get; set; }
-
-        [Required]
-        public string ReturnUrl { get; set; }
+        public bool IsValid()
+        {           
+            return true;
+        }
     }
 }

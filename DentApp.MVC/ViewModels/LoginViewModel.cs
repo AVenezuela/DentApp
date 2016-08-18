@@ -10,5 +10,8 @@ namespace DentApp.MVC.ViewModels
     public class LoginViewModel
     {
         public Login LoginBag { get; set; }
+
+        public bool RemindMe { get; set; }        
+        public string ReturnUrl { get; set; }
     }
 }

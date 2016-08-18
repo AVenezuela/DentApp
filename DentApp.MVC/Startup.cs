@@ -5,14 +5,22 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Microsoft.AspNetCore.Http;
 
+using SimpleInjector;
+using SimpleInjector.Integration.AspNetCore.Mvc;
 using DentApp.Security;
+using DentApp.CrossCutting.IoC;
 
 namespace DentApp.MVC
 {
     public class Startup
     {
+        public IConfigurationRoot Configuration { get; }
+        private Container container { get; }
+
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -27,9 +35,8 @@ namespace DentApp.MVC
                 builder.AddApplicationInsightsSettings(developerMode: true);
             }
             Configuration = builder.Build();
+            container = new Container();
         }
-
-        public IConfigurationRoot Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -39,6 +46,9 @@ namespace DentApp.MVC
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IIdentityHelper, IdentityHelper>();
+
+            services.AddSingleton<IControllerActivator>(new SimpleInjectorControllerActivator(container));
+            services.AddSingleton<IViewComponentActivator>(new SimpleInjectorViewComponentActivator(container));
 
             services.AddDistributedMemoryCache();
 
@@ -57,6 +67,8 @@ namespace DentApp.MVC
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            BootStrapper.RegisterServices(app, container);
+
             loggerFactory
                 .WithFilter(new FilterLoggerSettings
                     {

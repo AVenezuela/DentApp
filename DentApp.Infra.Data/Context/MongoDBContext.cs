@@ -1,15 +1,11 @@
 ﻿using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.IdentityModel.Protocols;
+using DentApp.Domain.Interfaces.Data; 
 
 namespace DentApp.Infra.Data.Context
 {
-    public class MongoDBContext
+    public class MongoDBContext : IMongoDBContext
     {   
-        public const string DATABASE_NAME = "blog";
+        public const string DATABASE_NAME = "dentapp";
         public const string POSTS_COLLECTION_NAME = "posts";
         public const string USERS_COLLECTION_NAME = "users";
 
@@ -27,6 +23,11 @@ namespace DentApp.Infra.Data.Context
         public IMongoClient Client
         {
             get { return _client; }
+        }
+
+        public IMongoDatabase DataBase
+        {
+            get { return _database; }
         }
 
         //public IMongoCollection<Post> Posts

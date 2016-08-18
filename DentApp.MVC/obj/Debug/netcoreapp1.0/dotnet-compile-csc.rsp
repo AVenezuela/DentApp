@@ -117,6 +117,10 @@
 -r:"C:\Users\andre\.nuget\packages\NuGet.Repositories\3.5.0-beta2-1484\lib\netstandard1.3\NuGet.Repositories.dll"
 -r:"C:\Users\andre\.nuget\packages\NuGet.RuntimeModel\3.5.0-beta2-1484\lib\netstandard1.3\NuGet.RuntimeModel.dll"
 -r:"C:\Users\andre\.nuget\packages\NuGet.Versioning\3.5.0-beta2-1484\lib\netstandard1.0\NuGet.Versioning.dll"
+-r:"C:\Users\andre\.nuget\packages\SimpleInjector\3.2.0\lib\netstandard1.6\SimpleInjector.dll"
+-r:"C:\Users\andre\.nuget\packages\SimpleInjector.Extensions.ExecutionContextScoping\3.2.0\lib\netstandard1.6\SimpleInjector.Extensions.ExecutionContextScoping.dll"
+-r:"C:\Users\andre\.nuget\packages\SimpleInjector.Integration.AspNetCore\3.2.1\lib\netstandard1.6\SimpleInjector.Integration.AspNetCore.dll"
+-r:"C:\Users\andre\.nuget\packages\SimpleInjector.Integration.AspNetCore.Mvc\3.2.3\lib\netstandard1.6\SimpleInjector.Integration.AspNetCore.Mvc.dll"
 -r:"C:\Users\andre\.nuget\packages\System.AppContext\4.1.0\ref\netstandard1.6\System.AppContext.dll"
 -r:"C:\Users\andre\.nuget\packages\System.Buffers\4.0.0\lib\netstandard1.1\System.Buffers.dll"
 -r:"C:\Users\andre\.nuget\packages\System.Collections\4.0.11\ref\netstandard1.3\System.Collections.dll"
@@ -203,6 +207,7 @@
 -r:"C:\Users\andre\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\andre\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\andre\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
+-r:"C:\Users\andre\Documents\Projetos\DentApp\DentApp.CrossCutting.IoC\bin\Debug\netstandard1.6\DentApp.CrossCutting.IoC.dll"
 -r:"C:\Users\andre\Documents\Projetos\DentApp\DentApp.Domain\bin\Debug\netstandard1.6\DentApp.Domain.dll"
 -r:"C:\Users\andre\Documents\Projetos\DentApp\DentApp.Security\bin\Debug\netstandard1.6\DentApp.Security.dll"
 -resource:"C:\Users\andre\Documents\Projetos\DentApp\DentApp.MVC\obj\Debug\netcoreapp1.0\DentApp.MVCdotnet-compile.deps.json",DentApp.MVC.deps.json

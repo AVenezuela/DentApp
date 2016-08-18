@@ -5,12 +5,12 @@
         <div>            
             @Html.TextBoxFor(model => model.LoginBag.UserName)
         </div>
-        <input type="hidden" id="ReturnUrl" asp-for="LoginBag.ReturnUrl" />
+        <input type="hidden" id="ReturnUrl" asp-for="ReturnUrl" />
         <div>
             @Html.PasswordFor(model => model.LoginBag.Password)
         </div>
         <div>
-            @Html.CheckBoxFor(model => model.LoginBag.RemindMe)
+            @Html.CheckBoxFor(model => model.RemindMe)
         </div>
         <div>
             <div>

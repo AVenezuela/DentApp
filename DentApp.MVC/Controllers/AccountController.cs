@@ -29,7 +29,8 @@ namespace DentApp.MVC.Controllers
         {
             LoginViewModel model = new ViewModels.LoginViewModel()
             {
-                LoginBag = new Login() { ReturnUrl = string.IsNullOrEmpty(ReturnUrl) ? "/" : ReturnUrl }
+                LoginBag = new Login(),
+                ReturnUrl = string.IsNullOrEmpty(ReturnUrl) ? "/" : ReturnUrl
             };
 
             return View(model);
@@ -37,7 +38,7 @@ namespace DentApp.MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(Login loginInfo)
+        public async Task<IActionResult> Login(LoginViewModel loginInfo)
         {
             if (ModelState.IsValid)
             {
@@ -49,7 +50,7 @@ namespace DentApp.MVC.Controllers
                     {
                         ["Id"] = Id.ToString()
                     };
-                    var principal = _identityHelper.CreatePrincipal(loginInfo.UserName, "", Claims);
+                    var principal = _identityHelper.CreatePrincipal(loginInfo.LoginBag.UserName, "", Claims);
 
                     await HttpContext.Authentication.SignInAsync("DentAppCookieMiddlewareInstance", principal);
                 }
