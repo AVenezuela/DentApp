@@ -15,15 +15,13 @@ namespace DentApp.MVC.Controllers
 {
     public class AccountController : BaseController
     {
-        private readonly ILoginAppService _loginAppService;
-        private readonly IIdentityHelper _identityHelper;
+        private readonly ILoginAppService _loginAppService;        
 
         public AccountController(
             ILoginAppService loginAppService,
-            IIdentityHelper identityHelper)
+            IIdentityHelper identityHelper): base(identityHelper)
         {
             _loginAppService = loginAppService;
-            _identityHelper = identityHelper;
         }
 
         // GET: /<controller>/
@@ -45,7 +43,7 @@ namespace DentApp.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _loginAppService.doLogin(loginInfo);
+                User user = await _loginAppService.doLogin(loginInfo);
 
                 if (!object.ReferenceEquals(user, null))
                 {
@@ -54,18 +52,12 @@ namespace DentApp.MVC.Controllers
                         ["Id"] = user.Id.ToString()
                     };
                     var principal = _identityHelper.CreatePrincipal(user.Login.UserName, "", Claims);
-
                     await HttpContext.Authentication.SignInAsync("DentAppCookieMiddlewareInstance", principal);
-                    loginInfo.ReturnUrl = "Home/Index";
+                    return RedirectToAction("Index", "Home");
                 }
             }
-            else
-            {
-                return RedirectToAction("Forbidden", "Account");
-            }
-
-            var uri = loginInfo.ReturnUrl.Split(new char[] { '/' });
-            return RedirectToAction(uri[2], uri[1]);
+            
+            return View(loginInfo);
         }
 
 
@@ -78,7 +70,7 @@ namespace DentApp.MVC.Controllers
         {
             await HttpContext.Authentication.SignOutAsync("DentAppCookieMiddlewareInstance");
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
     }
 }

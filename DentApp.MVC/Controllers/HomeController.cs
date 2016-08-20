@@ -4,12 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using DentApp.Security;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DentApp.MVC.Controllers
 {
+    [Authorize]
     public class HomeController : BaseController
     {
-        public HomeController()
+
+        public HomeController(IIdentityHelper identityHelper) : base(identityHelper)
         {
 
         }

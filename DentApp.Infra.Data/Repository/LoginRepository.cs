@@ -14,7 +14,7 @@ namespace DentApp.Infra.Data.Repository
         public LoginRepository(MongoDBContext context)
             : base(context)
         {
-          base.SetCollection("users");
+          SetCollection("users");
         }
 
         public async Task<User> doLogin(Login login)

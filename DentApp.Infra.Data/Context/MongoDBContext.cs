@@ -25,5 +25,10 @@ namespace DentApp.Infra.Data.Context
         {
             get { return _database; }
         }
+
+        public void Teste()
+        {
+            
+        }
     }
 }

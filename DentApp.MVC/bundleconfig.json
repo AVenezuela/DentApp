@@ -1,26 +1,48 @@
-﻿// Configure bundling and minification for the project.
-// More info at https://go.microsoft.com/fwlink/?LinkId=808241
-[
+﻿[
   {
     "outputFileName": "wwwroot/css/site.min.css",
-    // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
-      "wwwroot/css/site.css",
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/controllers/controllers.min.js",
+    "inputFiles": [
+      "wwwroot/js/controllers/homeController.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/app.min.js",
+    "inputFiles": [
+      "wwwroot/js/app.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/codebase/flat.min.css",
+    "inputFiles": [
       "wwwroot/js/codebase/dhtmlxscheduler_flat.css"
     ]
   },
   {
+    "outputFileName": "wwwroot/js/controllers/User/userCtrl.min.js",
     "inputFiles": [
-      "wwwroot/js/site.js",
-      "wwwroot/js/codebase/dhtmlxscheduler.js"
-    ],
-    // Optionally specify minification options
-    "minify": {
-      "enabled": true,
-      "renameLocals": true
-    },
-    "outputFileName": "wwwroot/js/site.min.js",
-    // Optinally generate .map file
-    "sourceMap": false
+      "wwwroot/js/controllers/User/userCreateController.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/l.min.js",
+    "inputFiles": [
+      "wwwroot/js/login.js"
+    ]
   }
 ]

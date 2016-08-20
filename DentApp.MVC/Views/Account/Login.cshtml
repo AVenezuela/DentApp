@@ -1,21 +1,37 @@
 ﻿@model DentApp.Application.ViewModels.LoginViewModel
-<form asp-controller="Account" asp-action="Login" method="post" class="u-full-width" role="form">
-    <div>
-        <div asp-validation-summary="All"></div>
-        <div>            
-            @Html.TextBoxFor(model => model.LoginBag.UserName)
-        </div>
-        <input type="hidden" id="ReturnUrl" asp-for="ReturnUrl" />
-        <div>
-            @Html.PasswordFor(model => model.LoginBag.Password)
-        </div>
-        <div>
-            @Html.CheckBoxFor(model => model.RemindMe)
-        </div>
-        <div>
+<md-content ng-app="DentAppLogin" class="transparent content" flex="90" layout="row">
+    <md-card flex class="cakecolor md-whiteframe-z1">
+        <form asp-controller="Account" name="projectForm" asp-action="Login" method="post" id="login" role="form">
+            <md-input-container class="md-block">
+                <label asp-for="LoginBag.UserName"></label>
+                <input asp-for="LoginBag.UserName" md-maxlength="10" required ng-model="userName">
+                <div asp-validation-for="LoginBag.UserName" ng-messages="projectForm.userName" md-auto-hide="true">
+                    <div ng-message="required">*</div>
+                    <div ng-message="md-maxlength">Deve ter no máximo 10 caracteres.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label asp-for="LoginBag.Password"></label>
+                <input asp-for="LoginBag.Password" md-minlength="10" type="password" required ng-model="password">
+                <div ng-messages="projectForm.password" md-auto-hide="true">
+                    <div ng-message="required">Favor informar.</div>
+                    <div ng-message="md-minlength">Deve ter no mínimo 8 caracteres.</div>
+                </div>
+            </md-input-container>
             <div>
-                <input type="submit" value="Login" class="button-primary" />
+                @Html.CheckBoxFor(model => model.RemindMe)
             </div>
-        </div>
-    </div>
-</form>
+            <div asp-validation-summary="All"></div>
+            <input type="hidden" id="ReturnUrl" asp-for="ReturnUrl" />
+            <md-button type="submit" name="login" class="md-primary" ng-disabled="projectForm.$invalid">Login</md-button>
+        </form>
+    </md-card>
+</md-content>
+@section scripts {
+    <environment names="Development">
+        <script src="~/js/login.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/l.min.js" asp-append-version="true"></script>
+    </environment>
+}

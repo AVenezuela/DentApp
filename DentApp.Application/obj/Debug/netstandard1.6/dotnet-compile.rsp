@@ -65,6 +65,7 @@
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\LoginAppService.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\Interfaces\ILoginAppService.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\Properties\AssemblyInfo.cs
-C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\ViewModels\Class.cs
+C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\ViewModels\BaseViewModel.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\ViewModels\HomeViewModel.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\ViewModels\LoginViewModel.cs
+C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\ViewModels\UserViewModel.cs

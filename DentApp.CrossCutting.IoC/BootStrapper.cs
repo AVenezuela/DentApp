@@ -38,17 +38,17 @@ namespace DentApp.CrossCutting.IoC
             container.Register<IHttpContextAccessor, HttpContextAccessor>(Lifestyle.Singleton);
             container.Register<IIdentityHelper, IdentityHelper>(Lifestyle.Singleton);            
 
-            container.Register<ILoginAppService, LoginAppService>(Lifestyle.Singleton);
-            container.Register<ILoginService, LoginService>(Lifestyle.Singleton);
-            container.Register<ILoginRepository, LoginRepository>(Lifestyle.Singleton);
+            container.Register<ILoginAppService, LoginAppService>(Lifestyle.Scoped);
+            container.Register<ILoginService, LoginService>(Lifestyle.Scoped);
+            container.Register<ILoginRepository, LoginRepository>(Lifestyle.Scoped);
 
-            container.Register<MongoDBContextOptions>(Lifestyle.Singleton);
+            container.Register<MongoDBContextOptions>(Lifestyle.Scoped);
             container.RegisterInitializer<MongoDBContextOptions>(options => 
             {
                 options.ConnectionString = "mongodb://localhost:27017";
                 options.DataBaseName = "dentapp";
             });
-            container.Register<MongoDBContext>(Lifestyle.Singleton);
+            container.Register<MongoDBContext>(Lifestyle.Scoped);
             
 
             container.Register(typeof (IBaseRepository<>), typeof (BaseRepository<>));

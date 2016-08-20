@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace DentApp.Application.ViewModels
 {
-    public class Class
+    public class BaseViewModel
     {
+
     }
 }
