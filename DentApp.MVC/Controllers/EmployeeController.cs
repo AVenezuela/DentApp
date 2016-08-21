@@ -11,9 +11,9 @@ using DentApp.Application.Interfaces;
 
 namespace DentApp.MVC.Controllers
 {
-    public class UserController : BaseController 
+    public class EmployeeController : BaseController 
     {        
-        public UserController(
+        public EmployeeController(
             IIdentityHelper identityHelper) : base(identityHelper)
         {            
             
@@ -23,17 +23,17 @@ namespace DentApp.MVC.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            IndexUserViewModel model = new IndexUserViewModel();
+            IndexEmployeeViewModel model = new IndexEmployeeViewModel();
             return PartialView("_Index", model);
         }
 
 
         // GET: /<controller>/
         [HttpGet]
-        public IActionResult Create()
+        public IActionResult Action()
         {
-            CreateUserViewModel model = new CreateUserViewModel();
-            return PartialView("_Create", model);
+            ActionEmployeeViewModel model = new ActionEmployeeViewModel();
+            return PartialView("_Action", model);
         }
     }
 }

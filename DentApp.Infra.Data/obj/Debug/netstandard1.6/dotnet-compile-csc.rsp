@@ -77,5 +77,6 @@
 "C:\Users\andre\Documents\Projetos\DentApp\DentApp.Infra.Data\Context\MongoDBContext.cs"
 "C:\Users\andre\Documents\Projetos\DentApp\DentApp.Infra.Data\Context\MongoDBContextOptions.cs"
 "C:\Users\andre\Documents\Projetos\DentApp\DentApp.Infra.Data\Properties\AssemblyInfo.cs"
-"C:\Users\andre\Documents\Projetos\DentApp\DentApp.Infra.Data\Repository\BaseRepository.cs"
+"C:\Users\andre\Documents\Projetos\DentApp\DentApp.Infra.Data\Repository\EmployeeRepository.cs"
 "C:\Users\andre\Documents\Projetos\DentApp\DentApp.Infra.Data\Repository\LoginRepository.cs"
+"C:\Users\andre\Documents\Projetos\DentApp\DentApp.Infra.Data\Repository\Common\BaseRepository.cs"

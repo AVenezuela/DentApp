@@ -18,7 +18,7 @@ namespace DentApp.Application
             _loginService = loginService;
         }
 
-        public async Task<User> doLogin(LoginViewModel login)
+        public async Task<Employee> doLogin(LoginViewModel login)
         {   
             return await _loginService.doLogin(login.LoginBag);
         }

@@ -8,6 +8,6 @@ namespace DentApp.Application.ViewModels
 {
     public class HomeViewModel
     {
-        public User UserBag { get; set; }
+        public Employee EmployeeBag { get; set; }
     }
 }

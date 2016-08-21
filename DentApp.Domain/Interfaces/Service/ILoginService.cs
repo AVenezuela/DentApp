@@ -8,6 +8,6 @@ namespace DentApp.Domain.Interfaces.Service
 {
     public interface ILoginService : IDisposable
     {
-        Task<User> doLogin(Login login);
+        Task<Employee> doLogin(Login login);
     }
 }

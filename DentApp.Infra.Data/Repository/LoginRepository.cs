@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DentApp.Infra.Data.Repository
 {
-    public class LoginRepository : BaseRepository<User>, ILoginRepository
+    public class LoginRepository : BaseRepository<Employee>, ILoginRepository
     {
         public LoginRepository(MongoDBContext context)
             : base(context)
@@ -17,7 +17,7 @@ namespace DentApp.Infra.Data.Repository
           SetCollection("users");
         }
 
-        public async Task<User> doLogin(Login login)
+        public async Task<Employee> doLogin(Login login)
         {
             return await FindSingle(user => ((user.Login.UserName == login.UserName) && (user.Login.Password == login.Password)));
         }

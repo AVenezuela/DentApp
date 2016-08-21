@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DentApp.Domain.Entities
 {
-    public class User : Entity<int>
+    public class Employee : Entity<int>
     {
         [Required(ErrorMessage = "Informar o nome")]
         public string Name { get; set; }

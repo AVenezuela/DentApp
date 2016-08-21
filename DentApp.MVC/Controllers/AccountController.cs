@@ -43,7 +43,7 @@ namespace DentApp.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await _loginAppService.doLogin(loginInfo);
+                Employee user = await _loginAppService.doLogin(loginInfo);
 
                 if (!object.ReferenceEquals(user, null))
                 {

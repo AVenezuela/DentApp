@@ -22,7 +22,7 @@ namespace DentApp.Domain.Services
             _loginRepository.Dispose();
         }
 
-        public Task<User> doLogin(Login login)
+        public Task<Employee> doLogin(Login login)
         {
             return _loginRepository.doLogin(login);
         }

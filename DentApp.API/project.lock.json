@@ -107,6 +107,38 @@
           "lib/netstandard1.3/Microsoft.AspNetCore.Antiforgery.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Authentication/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.DataProtection": "1.0.0",
+          "Microsoft.AspNetCore.Http": "1.0.0",
+          "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Options": "1.0.0",
+          "Microsoft.Extensions.WebEncoders": "1.0.0",
+          "System.Net.Http": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Cookies/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication": "1.0.0",
+          "Microsoft.Extensions.Options": "1.0.0",
+          "Microsoft.Extensions.WebEncoders": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.Cookies.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1313,6 +1345,63 @@
           "lib/netstandard1.0/Microsoft.Extensions.WebEncoders.dll": {}
         }
       },
+      "Microsoft.IdentityModel.Logging/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.Tracing": "4.1.0",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.IdentityModel.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.IdentityModel.Logging.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.Protocols/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Specialized": "4.0.1",
+          "System.Diagnostics.Contracts": "4.0.1",
+          "System.IdentityModel.Tokens.Jwt": "5.0.0",
+          "System.Net.Http": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.IdentityModel.Protocols.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.IdentityModel.Protocols.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.Tokens/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "1.0.0",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Tools": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0",
+          "System.Security.Claims": "4.0.1",
+          "System.Security.Cryptography.Algorithms": "4.2.0",
+          "System.Security.Cryptography.Cng": "4.2.0",
+          "System.Security.Cryptography.Csp": "4.0.0",
+          "System.Security.Cryptography.X509Certificates": "4.1.0",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Xml.ReaderWriter": "4.0.11"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll": {}
+        }
+      },
       "Microsoft.Net.Http.Headers/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1494,6 +1583,54 @@
           }
         }
       },
+      "mongocsharpdriver/2.3.0-beta1": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.3.0-beta1",
+          "MongoDB.Driver": "2.3.0-beta1",
+          "MongoDB.Driver.Core": "2.3.0-beta1"
+        },
+        "compile": {
+          "lib/netstandard1.6/MongoDB.Driver.Legacy.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/MongoDB.Driver.Legacy.dll": {}
+        }
+      },
+      "MongoDB.Bson/2.3.0-beta1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.6/MongoDB.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/MongoDB.Bson.dll": {}
+        }
+      },
+      "MongoDB.Driver/2.3.0-beta1": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.3.0-beta1",
+          "MongoDB.Driver.Core": "2.3.0-beta1"
+        },
+        "compile": {
+          "lib/netstandard1.6/MongoDB.Driver.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/MongoDB.Driver.dll": {}
+        }
+      },
+      "MongoDB.Driver.Core/2.3.0-beta1": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.3.0-beta1"
+        },
+        "compile": {
+          "lib/netstandard1.6/MongoDB.Driver.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/MongoDB.Driver.Core.dll": {}
+        }
+      },
       "NETStandard.Library/1.6.0": {
         "type": "package",
         "dependencies": {
@@ -1576,6 +1713,9 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
+      "NuSpec.ReferenceGenerator/2.0.0-beta-bld14": {
+        "type": "package"
+      },
       "runtime.native.System/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -1639,6 +1779,71 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        }
+      },
+      "SimpleInjector/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel": "4.0.1",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Diagnostics.Tools": "4.0.1",
+          "System.Globalization": "4.0.11",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "lib/netstandard1.6/SimpleInjector.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/SimpleInjector.dll": {}
+        }
+      },
+      "SimpleInjector.Extensions.ExecutionContextScoping/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SimpleInjector": "3.2.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/SimpleInjector.Extensions.ExecutionContextScoping.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/SimpleInjector.Extensions.ExecutionContextScoping.dll": {}
+        }
+      },
+      "SimpleInjector.Integration.AspNetCore/3.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "1.0.0",
+          "NuSpec.ReferenceGenerator": "2.0.0-beta-bld14",
+          "SimpleInjector": "3.2.0",
+          "SimpleInjector.Extensions.ExecutionContextScoping": "3.2.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/SimpleInjector.Integration.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/SimpleInjector.Integration.AspNetCore.dll": {}
+        }
+      },
+      "SimpleInjector.Integration.AspNetCore.Mvc/3.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.Razor": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
+          "NuSpec.ReferenceGenerator": "2.0.0-beta-bld14",
+          "SimpleInjector.Integration.AspNetCore": "3.2.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/SimpleInjector.Integration.AspNetCore.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/SimpleInjector.Integration.AspNetCore.Mvc.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -1752,7 +1957,7 @@
           "System.Threading": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Collections.Specialized.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -2070,6 +2275,18 @@
           }
         }
       },
+      "System.IdentityModel.Tokens.Jwt/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.dll": {}
+        }
+      },
       "System.IO/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -2138,7 +2355,7 @@
           "ref/netstandard1.3/System.IO.Compression.ZipFile.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.3/_._": {}
+          "lib/netstandard1.3/System.IO.Compression.ZipFile.dll": {}
         }
       },
       "System.IO.FileSystem/4.0.1": {
@@ -2946,7 +3163,7 @@
           "System.Text.Encoding": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.6/_._": {}
+          "ref/netstandard1.6/System.Security.Cryptography.Cng.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.Cng.dll": {
@@ -2977,7 +3194,7 @@
           "System.Threading": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Security.Cryptography.Csp.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Csp.dll": {
@@ -3498,6 +3715,84 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "DentApp.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "DentApp.Domain": "1.0.0",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/DentApp.Application.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/DentApp.Application.dll": {}
+        }
+      },
+      "DentApp.CrossCutting.IoC/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "DentApp.Application": "1.0.0",
+          "DentApp.Domain": "1.0.0",
+          "DentApp.Infra.Data": "1.0.0",
+          "DentApp.Security": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "SimpleInjector.Integration.AspNetCore.Mvc": "3.2.3",
+          "mongocsharpdriver": "2.3.0-beta1"
+        },
+        "compile": {
+          "netstandard1.6/DentApp.CrossCutting.IoC.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/DentApp.CrossCutting.IoC.dll": {}
+        }
+      },
+      "DentApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel.Annotations": "4.1.0",
+          "mongocsharpdriver": "2.3.0-beta1"
+        },
+        "compile": {
+          "netstandard1.6/DentApp.Domain.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/DentApp.Domain.dll": {}
+        }
+      },
+      "DentApp.Infra.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "DentApp.Domain": "1.0.0",
+          "Microsoft.IdentityModel.Protocols": "2.0.0",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/DentApp.Infra.Data.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/DentApp.Infra.Data.dll": {}
+        }
+      },
+      "DentApp.Security/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
+          "Microsoft.AspNetCore.Authorization": "1.0.0",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/DentApp.Security.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/DentApp.Security.dll": {}
+        }
       }
     }
   },
@@ -3562,6 +3857,32 @@
         "lib/net451/Microsoft.AspNetCore.Antiforgery.xml",
         "lib/netstandard1.3/Microsoft.AspNetCore.Antiforgery.dll",
         "lib/netstandard1.3/Microsoft.AspNetCore.Antiforgery.xml"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication/1.0.0": {
+      "sha512": "3af/pZSoaIkZPjGPTlpvIXKDA4NCN6O7++iSO4N2rnKjC5OFHnCX5CLzRxO6721kqovIssRPo84q1HvT4IL6GQ==",
+      "type": "package",
+      "path": "Microsoft.AspNetCore.Authentication/1.0.0",
+      "files": [
+        "Microsoft.AspNetCore.Authentication.1.0.0.nupkg.sha512",
+        "Microsoft.AspNetCore.Authentication.nuspec",
+        "lib/net451/Microsoft.AspNetCore.Authentication.dll",
+        "lib/net451/Microsoft.AspNetCore.Authentication.xml",
+        "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.dll",
+        "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.xml"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Cookies/1.0.0": {
+      "sha512": "zWhEmMwAqLnQIn3eWGlfioBkKngLB/cEqhqw+jAPPrelH8nNNCnHKIoC6ZQf5oSPmpTX9vZU7XEOrpXHFxSQGw==",
+      "type": "package",
+      "path": "Microsoft.AspNetCore.Authentication.Cookies/1.0.0",
+      "files": [
+        "Microsoft.AspNetCore.Authentication.Cookies.1.0.0.nupkg.sha512",
+        "Microsoft.AspNetCore.Authentication.Cookies.nuspec",
+        "lib/net451/Microsoft.AspNetCore.Authentication.Cookies.dll",
+        "lib/net451/Microsoft.AspNetCore.Authentication.Cookies.xml",
+        "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.Cookies.dll",
+        "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.Cookies.xml"
       ]
     },
     "Microsoft.AspNetCore.Authorization/1.0.0": {
@@ -4499,6 +4820,45 @@
         "lib/netstandard1.0/Microsoft.Extensions.WebEncoders.xml"
       ]
     },
+    "Microsoft.IdentityModel.Logging/1.0.0": {
+      "sha512": "8lt3q7o9xSLyKfja/D2J67N8EZLwISjXktkwxK275yOrZY16iNCHCWqtDVP1M/DHuC/LWFMoheF3lmaJC9UXQg==",
+      "type": "package",
+      "path": "Microsoft.IdentityModel.Logging/1.0.0",
+      "files": [
+        "Microsoft.IdentityModel.Logging.1.0.0.nupkg.sha512",
+        "Microsoft.IdentityModel.Logging.nuspec",
+        "lib/net451/Microsoft.IdentityModel.Logging.dll",
+        "lib/net451/Microsoft.IdentityModel.Logging.xml",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Logging.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Logging.xml"
+      ]
+    },
+    "Microsoft.IdentityModel.Protocols/2.0.0": {
+      "sha512": "dHV39tCYxj8yMySDOUhNGakFQSNl3PZcweBWevtHyUeX/8UbroL0sQUHNjE38/UE0c4RS43WvWn+GO39R0PqOA==",
+      "type": "package",
+      "path": "Microsoft.IdentityModel.Protocols/2.0.0",
+      "files": [
+        "Microsoft.IdentityModel.Protocols.2.0.0.nupkg.sha512",
+        "Microsoft.IdentityModel.Protocols.nuspec",
+        "lib/net451/Microsoft.IdentityModel.Protocols.dll",
+        "lib/net451/Microsoft.IdentityModel.Protocols.xml",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Protocols.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Protocols.xml"
+      ]
+    },
+    "Microsoft.IdentityModel.Tokens/5.0.0": {
+      "sha512": "VwNw+fm2nlbkL3GRO8b6WBlqs6M4q9Dft0CAg0TMHUYwuiU+4dciiIlZRC6q/HEcllKUvc0KDXt20n2PGcO1pA==",
+      "type": "package",
+      "path": "Microsoft.IdentityModel.Tokens/5.0.0",
+      "files": [
+        "Microsoft.IdentityModel.Tokens.5.0.0.nupkg.sha512",
+        "Microsoft.IdentityModel.Tokens.nuspec",
+        "lib/net451/Microsoft.IdentityModel.Tokens.dll",
+        "lib/net451/Microsoft.IdentityModel.Tokens.xml",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.xml"
+      ]
+    },
     "Microsoft.Net.Http.Headers/1.0.0": {
       "sha512": "1lr92itF1fKR2oEQ6gk1IUsuCgp7UMlf/b1sjlAyuDeUnttj39ra59GQHYpomglJX1UVNpi1/cSBbEsXoNeIhw==",
       "type": "package",
@@ -4727,6 +5087,62 @@
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll"
       ]
     },
+    "mongocsharpdriver/2.3.0-beta1": {
+      "sha512": "Wy9NiiISZcPMI/hI0O5rM1vwV6bSF1HGQd/Ac9N6bFIOz/0b2yP5mehmdNM867Rmy/P386HTSUqQ8YKQXIIAQA==",
+      "type": "package",
+      "path": "mongocsharpdriver/2.3.0-beta1",
+      "files": [
+        "License.rtf",
+        "lib/net45/MongoDB.Driver.Legacy.XML",
+        "lib/net45/MongoDB.Driver.Legacy.dll",
+        "lib/netstandard1.6/MongoDB.Driver.Legacy.dll",
+        "lib/netstandard1.6/MongoDB.Driver.Legacy.xml",
+        "mongocsharpdriver.2.3.0-beta1.nupkg.sha512",
+        "mongocsharpdriver.nuspec"
+      ]
+    },
+    "MongoDB.Bson/2.3.0-beta1": {
+      "sha512": "UOhuuowkOw+LxkB6yCVEQb1iZ7om32cirpoc0ecvg1Swqqi5hl7TLVHu/UdsYljQbxJd4HEw2I9BY0sn0POasA==",
+      "type": "package",
+      "path": "MongoDB.Bson/2.3.0-beta1",
+      "files": [
+        "License.rtf",
+        "MongoDB.Bson.2.3.0-beta1.nupkg.sha512",
+        "MongoDB.Bson.nuspec",
+        "lib/net45/MongoDB.Bson.XML",
+        "lib/net45/MongoDB.Bson.dll",
+        "lib/netstandard1.6/MongoDB.Bson.dll",
+        "lib/netstandard1.6/MongoDB.Bson.xml"
+      ]
+    },
+    "MongoDB.Driver/2.3.0-beta1": {
+      "sha512": "DNJzglW5Oet9rB0wLpgYUsVSF9/56Isbe1sKH6typxwTzuCP8snz8Of8ABDMbggE9V54xVhMmOvlo0oUViIHqw==",
+      "type": "package",
+      "path": "MongoDB.Driver/2.3.0-beta1",
+      "files": [
+        "License.rtf",
+        "MongoDB.Driver.2.3.0-beta1.nupkg.sha512",
+        "MongoDB.Driver.nuspec",
+        "lib/net45/MongoDB.Driver.XML",
+        "lib/net45/MongoDB.Driver.dll",
+        "lib/netstandard1.6/MongoDB.Driver.dll",
+        "lib/netstandard1.6/MongoDB.Driver.xml"
+      ]
+    },
+    "MongoDB.Driver.Core/2.3.0-beta1": {
+      "sha512": "x03OEXas9SXyg9kgikNDHlcbIMz1WDAl9YsfdgwgX4Fmo2TqkfE7rqEftoIiZ5BKI1Cu0241Gd6mAqfJxWD48A==",
+      "type": "package",
+      "path": "MongoDB.Driver.Core/2.3.0-beta1",
+      "files": [
+        "License.rtf",
+        "MongoDB.Driver.Core.2.3.0-beta1.nupkg.sha512",
+        "MongoDB.Driver.Core.nuspec",
+        "lib/net45/MongoDB.Driver.Core.XML",
+        "lib/net45/MongoDB.Driver.Core.dll",
+        "lib/netstandard1.6/MongoDB.Driver.Core.dll",
+        "lib/netstandard1.6/MongoDB.Driver.Core.xml"
+      ]
+    },
     "NETStandard.Library/1.6.0": {
       "sha512": "ypsCvIdCZ4IoYASJHt6tF2fMo7N30NLgV1EbmC+snO490OMl9FvVxmumw14rhReWU3j3g7BYudG6YCrchwHJlA==",
       "type": "package",
@@ -4760,6 +5176,20 @@
         "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
         "tools/install.ps1"
+      ]
+    },
+    "NuSpec.ReferenceGenerator/2.0.0-beta-bld14": {
+      "sha512": "4glYZM9mf2HMxUvyZD01f1Kkgk4wygEHPB2m0WhVMlrCPfMhNiO+CNi4U6xZhKoJ5H+JL0AR+IgfPcUmd6Md9w==",
+      "type": "package",
+      "path": "NuSpec.ReferenceGenerator/2.0.0-beta-bld14",
+      "files": [
+        "NuSpec.ReferenceGenerator.2.0.0-beta-bld14.nupkg.sha512",
+        "NuSpec.ReferenceGenerator.nuspec",
+        "build/netstandard1.0/NuSpec.ReferenceGenerator.targets",
+        "build/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/NuSpec.ReferenceGenerator.targets",
+        "tools/RefGen.exe",
+        "tools/RefGen.exe.config",
+        "tools/RefGen.pdb"
       ]
     },
     "runtime.native.System/4.0.0": {
@@ -4820,6 +5250,62 @@
         "lib/netstandard1.0/_._",
         "runtime.native.System.Security.Cryptography.4.0.0.nupkg.sha512",
         "runtime.native.System.Security.Cryptography.nuspec"
+      ]
+    },
+    "SimpleInjector/3.2.0": {
+      "sha512": "w1pTOi9aS7cr/n2lZSocpOFPSQCF4vluffNGnNrxdcklk56P+xlMb0wQETrE5jPuzHpU31MdRP31nqtXoHhYVg==",
+      "type": "package",
+      "path": "SimpleInjector/3.2.0",
+      "files": [
+        "SimpleInjector.3.2.0.nupkg.sha512",
+        "SimpleInjector.nuspec",
+        "lib/net40-client/SimpleInjector.dll",
+        "lib/net40-client/SimpleInjector.xml",
+        "lib/net45/SimpleInjector.dll",
+        "lib/net45/SimpleInjector.xml",
+        "lib/netstandard1.6/SimpleInjector.dll",
+        "lib/netstandard1.6/SimpleInjector.xml",
+        "lib/portable-net4+sl4+wp8+win8+wpa81/SimpleInjector.dll",
+        "lib/portable-net4+sl4+wp8+win8+wpa81/SimpleInjector.xml"
+      ]
+    },
+    "SimpleInjector.Extensions.ExecutionContextScoping/3.2.0": {
+      "sha512": "6fr13/82zqTVhtKT65zTEvAhN7SM9fcQUPfBIG/spOpTFbtegcMKxLGkhiLQjWyLWxc1HXmhxoJUXsmzY04tmA==",
+      "type": "package",
+      "path": "SimpleInjector.Extensions.ExecutionContextScoping/3.2.0",
+      "files": [
+        "SimpleInjector.Extensions.ExecutionContextScoping.3.2.0.nupkg.sha512",
+        "SimpleInjector.Extensions.ExecutionContextScoping.nuspec",
+        "lib/net45/SimpleInjector.Extensions.ExecutionContextScoping.dll",
+        "lib/net45/SimpleInjector.Extensions.ExecutionContextScoping.xml",
+        "lib/netstandard1.6/SimpleInjector.Extensions.ExecutionContextScoping.dll",
+        "lib/netstandard1.6/SimpleInjector.Extensions.ExecutionContextScoping.xml"
+      ]
+    },
+    "SimpleInjector.Integration.AspNetCore/3.2.1": {
+      "sha512": "IPlksJvKYNAqu0DUjlWsK38IsexcRd9txWsDHrJEV7bPbYgZ8yMTZ6/VW9gnhwa6NjKEEKjkN7UkianQWBAVTg==",
+      "type": "package",
+      "path": "SimpleInjector.Integration.AspNetCore/3.2.1",
+      "files": [
+        "SimpleInjector.Integration.AspNetCore.3.2.1.nupkg.sha512",
+        "SimpleInjector.Integration.AspNetCore.nuspec",
+        "lib/net451/SimpleInjector.Integration.AspNetCore.dll",
+        "lib/net451/SimpleInjector.Integration.AspNetCore.xml",
+        "lib/netstandard1.6/SimpleInjector.Integration.AspNetCore.dll",
+        "lib/netstandard1.6/SimpleInjector.Integration.AspNetCore.xml"
+      ]
+    },
+    "SimpleInjector.Integration.AspNetCore.Mvc/3.2.3": {
+      "sha512": "YdWcZm9NukIgFDH+8kb+rfSl+hLGN4yayqqJQC9+4vqy44baJEp3jV9jPCfO7a36rmAII6XABGIbrJFn0PilGw==",
+      "type": "package",
+      "path": "SimpleInjector.Integration.AspNetCore.Mvc/3.2.3",
+      "files": [
+        "SimpleInjector.Integration.AspNetCore.Mvc.3.2.3.nupkg.sha512",
+        "SimpleInjector.Integration.AspNetCore.Mvc.nuspec",
+        "lib/net451/SimpleInjector.Integration.AspNetCore.Mvc.dll",
+        "lib/net451/SimpleInjector.Integration.AspNetCore.Mvc.xml",
+        "lib/netstandard1.6/SimpleInjector.Integration.AspNetCore.Mvc.dll",
+        "lib/netstandard1.6/SimpleInjector.Integration.AspNetCore.Mvc.xml"
       ]
     },
     "System.AppContext/4.1.0": {
@@ -5994,6 +6480,19 @@
         "runtimes/unix/lib/netstandard1.3/System.Globalization.Extensions.dll",
         "runtimes/win/lib/net46/System.Globalization.Extensions.dll",
         "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll"
+      ]
+    },
+    "System.IdentityModel.Tokens.Jwt/5.0.0": {
+      "sha512": "Ne69BCr2FPAysLG7pOM/+U/XFwGg849GIML2NuqtfEwBC3l74SaUPN3AmJfHccBcgOSDL3jVLQ3/ZQTtd3g6JA==",
+      "type": "package",
+      "path": "System.IdentityModel.Tokens.Jwt/5.0.0",
+      "files": [
+        "System.IdentityModel.Tokens.Jwt.5.0.0.nupkg.sha512",
+        "System.IdentityModel.Tokens.Jwt.nuspec",
+        "lib/net451/System.IdentityModel.Tokens.Jwt.dll",
+        "lib/net451/System.IdentityModel.Tokens.Jwt.xml",
+        "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.dll",
+        "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.xml"
       ]
     },
     "System.IO/4.1.0": {
@@ -9326,10 +9825,37 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
+    },
+    "DentApp.Application/1.0.0": {
+      "type": "project",
+      "path": "../DentApp.Application/project.json",
+      "msbuildProject": "../DentApp.Application/DentApp.Application.xproj"
+    },
+    "DentApp.CrossCutting.IoC/1.0.0": {
+      "type": "project",
+      "path": "../DentApp.CrossCutting.IoC/project.json",
+      "msbuildProject": "../DentApp.CrossCutting.IoC/DentApp.CrossCutting.IoC.xproj"
+    },
+    "DentApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../DentApp.Domain/project.json",
+      "msbuildProject": "../DentApp.Domain/DentApp.Domain.xproj"
+    },
+    "DentApp.Infra.Data/1.0.0": {
+      "type": "project",
+      "path": "../DentApp.Infra.Data/project.json",
+      "msbuildProject": "../DentApp.Infra.Data/DentApp.Infra.Data.xproj"
+    },
+    "DentApp.Security/1.0.0": {
+      "type": "project",
+      "path": "../DentApp.Security/project.json",
+      "msbuildProject": "../DentApp.Security/DentApp.Security.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
+      "DentApp.Application >= 1.0.0-*",
+      "DentApp.CrossCutting.IoC >= 1.0.0-*",
       "Microsoft.ApplicationInsights.AspNetCore >= 1.0.0",
       "Microsoft.AspNetCore.Mvc >= 1.0.0",
       "Microsoft.AspNetCore.Server.IISIntegration >= 1.0.0",
@@ -9341,7 +9867,9 @@
       "Microsoft.Extensions.Logging.Console >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.0.0",
-      "Microsoft.NETCore.App >= 1.0.0"
+      "Microsoft.NETCore.App >= 1.0.0",
+      "MongoDB.Bson >= 2.3.0-beta1",
+      "SimpleInjector.Integration.AspNetCore.Mvc >= 3.2.3"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

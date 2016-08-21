@@ -62,10 +62,12 @@
 --reference:C:\Users\andre\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\andre\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 --reference:C:\Users\andre\Documents\Projetos\DentApp\DentApp.Domain\bin\Debug\netstandard1.6\DentApp.Domain.dll
+C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\EmployeeAppService.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\LoginAppService.cs
+C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\Interfaces\IEmployeeAppService.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\Interfaces\ILoginAppService.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\Properties\AssemblyInfo.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\ViewModels\BaseViewModel.cs
+C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\ViewModels\EmployeeViewModel.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\ViewModels\HomeViewModel.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\ViewModels\LoginViewModel.cs
-C:\Users\andre\Documents\Projetos\DentApp\DentApp.Application\ViewModels\UserViewModel.cs

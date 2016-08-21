@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SimpleInjector;
+using SimpleInjector.Integration.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using DentApp.CrossCutting.IoC;
 
 namespace DentApp.API
 {
     public class Startup
     {
+        public IConfigurationRoot Configuration { get; }
+        private Container container { get; }
+
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -27,15 +30,16 @@ namespace DentApp.API
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
-        }
-
-        public IConfigurationRoot Configuration { get; }
+            container = new Container();
+        }        
 
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
+
+            services.AddSingleton<IControllerActivator>(new SimpleInjectorControllerActivator(container));
 
             services.AddMvc();
         }
@@ -45,6 +49,8 @@ namespace DentApp.API
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            BootStrapperAPI.RegisterServices(app, container);
 
             app.UseApplicationInsightsRequestTelemetry();
 

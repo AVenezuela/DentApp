@@ -151,4 +151,5 @@
 --reference:C:\Users\andre\Documents\Projetos\DentApp\DentApp.Infra.Data\bin\Debug\netstandard1.6\DentApp.Infra.Data.dll
 --reference:C:\Users\andre\Documents\Projetos\DentApp\DentApp.Security\bin\Debug\netstandard1.6\DentApp.Security.dll
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.CrossCutting.IoC\BootStrapper.cs
+C:\Users\andre\Documents\Projetos\DentApp\DentApp.CrossCutting.IoC\BootStrapperAPI.cs
 C:\Users\andre\Documents\Projetos\DentApp\DentApp.CrossCutting.IoC\Properties\AssemblyInfo.cs

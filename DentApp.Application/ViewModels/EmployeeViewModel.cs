@@ -6,13 +6,13 @@ using DentApp.Domain.Entities;
 
 namespace DentApp.Application.ViewModels
 {
-    public class IndexUserViewModel
+    public class IndexEmployeeViewModel
     {
-        public IEnumerable<User> ListUserBag { get; set; }
+        public IEnumerable<Employee> ListUserBag { get; set; }
     }
 
-    public class CreateUserViewModel
+    public class ActionEmployeeViewModel
     {
-        public User UserBag { get; set; }
+        public Employee UserBag { get; set; }
     }
 }

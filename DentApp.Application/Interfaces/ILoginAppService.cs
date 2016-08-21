@@ -9,6 +9,6 @@ namespace DentApp.Application.Interfaces
 {
     public interface ILoginAppService : IDisposable
     {
-        Task<User> doLogin(LoginViewModel login);
+        Task<Employee> doLogin(LoginViewModel login);
     }
 }

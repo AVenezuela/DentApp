@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace DentApp.Domain.Interfaces.Repository
 {
-    public interface ILoginRepository : IBaseRepository<User>
+    public interface ILoginRepository : IBaseRepository<Employee>
     {
-        Task<User> doLogin(Login login);
+        Task<Employee> doLogin(Login login);
     }
 }

@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using MongoDB.Driver;
+using MongoDB.Bson;
 using System.Linq.Expressions;
+using DentApp.Domain.Entities;
 
 namespace DentApp.Domain.Interfaces.Repository
 {
     public interface IBaseRepository<TEntity> : IDisposable where TEntity : class
     {
-        TEntity Add(TEntity obj);
-        TEntity GetById(Guid id);
-        IEnumerable<TEntity> GetAll();
-        TEntity Update(TEntity obj);
-        void Remove(Guid id);
-        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
+        Task<TEntity> Add(TEntity obj);
+        Task<TEntity> GetById(ObjectId id);
+        Task<IEnumerable<TEntity>> GetAll();
+        Task<TEntity> Edit(TEntity obj);
+        void Delete(TEntity obj);
+        Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate);
         Task<TEntity> FindSingle(Expression<Func<TEntity, bool>> predicate);
+        void Delete<T>(T entity) where T : BaseEntity;
     }
 }
