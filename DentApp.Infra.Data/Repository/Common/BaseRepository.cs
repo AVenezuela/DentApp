@@ -50,7 +50,7 @@ namespace DentApp.Infra.Data.Repository
 
         public async Task<TEntity> GetById(ObjectId id)
         {            
-            return await _collection.Find(o => (o as IEntity<TEntity>).Id == id).SingleOrDefaultAsync();
+            return await _collection.Find<TEntity>(o => (o as IEntity<TEntity>).Id == id).SingleOrDefaultAsync();
         }
 
         public void Delete(Guid id)
