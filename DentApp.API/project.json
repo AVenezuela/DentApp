@@ -1,9 +1,7 @@
 ﻿{
   "dependencies": {
-    "Microsoft.NETCore.App": {
-      "version": "1.0.0",
-      "type": "platform"
-    },
+    "DentApp.Application": "1.0.0-*",
+    "DentApp.CrossCutting.IoC": "1.0.0-*",
     "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
@@ -15,10 +13,12 @@
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-    "SimpleInjector.Integration.AspNetCore.Mvc": "3.2.3",
-    "DentApp.CrossCutting.IoC": "1.0.0-*",
-    "DentApp.Application": "1.0.0-*",
-    "MongoDB.Bson": "2.3.0-beta1"
+    "Microsoft.NETCore.App": {
+      "version": "1.0.0",
+      "type": "platform"
+    },
+    "MongoDB.Bson": "2.3.0-beta1",
+    "SimpleInjector.Integration.AspNetCore.Mvc": "3.2.3"
   },
 
   "tools": {

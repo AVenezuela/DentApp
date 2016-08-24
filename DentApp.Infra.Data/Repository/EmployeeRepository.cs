@@ -14,12 +14,7 @@ namespace DentApp.Infra.Data.Repository
         public EmployeeRepository(MongoDBContext context) : base(context)
         {
             SetCollection("users");
-        }
-
-        public async Task<Employee> GetByMyID(ObjectId id)
-        {
-            return await FindSingle(e => e.Id == id);
-        }
+        }        
 
         public Task<Employee> GetByLogin(Login login)
         {

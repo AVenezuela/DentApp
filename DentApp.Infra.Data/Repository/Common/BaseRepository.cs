@@ -15,7 +15,8 @@ namespace DentApp.Infra.Data.Repository
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
         protected MongoDBContext _mongoDBContext;
-        protected IMongoCollection<TEntity> _collection;        
+        protected IMongoCollection<TEntity> _collection;
+        protected FilterDefinition<TEntity> filter;
 
         public BaseRepository(MongoDBContext context)
         {
@@ -35,7 +36,7 @@ namespace DentApp.Infra.Data.Repository
         
         public async Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return await _collection.Find(predicate).ToListAsync();
         }
 
         public async Task<TEntity> FindSingle(Expression<Func<TEntity, bool>> predicate)
@@ -45,22 +46,27 @@ namespace DentApp.Infra.Data.Repository
 
         public async Task<IEnumerable<TEntity>> GetAll()
         {
-            throw new NotImplementedException();
+            filter = Builders<TEntity>.Filter.Empty;
+            return await _collection.Find(filter).ToListAsync();
         }
 
         public async Task<TEntity> GetById(ObjectId id)
+        {
+            filter = Builders<TEntity>.Filter.Eq("_id", id);
+            return await _collection.Find(filter).SingleOrDefaultAsync();
+        }
+
+        public void Delete(string id)
+        {
+            filter = Builders<TEntity>.Filter.Eq("_id", id);
+            _collection.DeleteOne(filter);
+        }
+
+        public async Task<TEntity> Update(TEntity obj)
         {            
-            return await _collection.Find(o => (o as IEntity<TEntity>).Id == id).SingleOrDefaultAsync();
-        }
-
-        public void Delete(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<TEntity> Edit(TEntity obj)
-        {
-            throw new NotImplementedException();
+            filter = Builders<TEntity>.Filter.Eq("_id", (obj as IEntity<TEntity>).Id);
+            await _collection.ReplaceOneAsync(filter, obj);
+            return obj;
         }
 
         public void Dispose()
@@ -70,7 +76,7 @@ namespace DentApp.Infra.Data.Repository
 
         public void Delete(TEntity obj)
         {
-            throw new NotImplementedException();
+            //Delete((obj as IEntity<TEntity>).Id);
         }
 
         public void Delete<T>(T entity) where T : BaseEntity

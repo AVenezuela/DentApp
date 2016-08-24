@@ -6,6 +6,7 @@ using DentApp.Application.Interfaces;
 using DentApp.Application.ViewModels;
 using DentApp.Domain.Entities;
 using DentApp.Domain.Interfaces.Service;
+using MongoDB.Bson;
 
 namespace DentApp.Application
 {
@@ -18,9 +19,14 @@ namespace DentApp.Application
             _userService = userService;
         }
 
+        public async Task<Employee> GetByID(string id)
+        {
+            return await _userService.GetById(new ObjectId(id));
+        }
+
         public async Task<ActionEmployeeViewModel> Add(ActionEmployeeViewModel model)
         {
-            await _userService.Create(model.UserBag);
+            await _userService.Add(model.UserBag);
             return model;
         }
 

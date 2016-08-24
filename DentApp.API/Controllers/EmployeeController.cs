@@ -2,35 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DentApp.Domain.Interfaces.Service;
 using DentApp.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
+using DentApp.Application;
+using DentApp.Application.Interfaces;
+using DentApp.Application.ViewModels;
 
 namespace DentApp.API.Controllers
 {
     [Route("api/[controller]")]
     public class EmployeeController : Controller
     {
-        protected IEmployeeService _userService;
+        protected IEmployeeAppService _userAppService;
 
-        public EmployeeController(IEmployeeService userService)
+        public EmployeeController(IEmployeeAppService userAppService)
         {
-            _userService = userService;
+            _userAppService = userAppService;
         }
 
 
         [HttpPost]
-        public async Task<Employee> Add(Employee model)
+        public async Task<ActionEmployeeViewModel> Add(ActionEmployeeViewModel model)
         {
-            await _userService.Create(model);
+            await _userAppService.Add(model);
             return model;
         }
         
         [HttpGet("{id}")]
         public async Task<Employee> Get(string id)
         {
-            return await _userService.GetByID(new ObjectId(id));
+            return await _userAppService.GetByID(id);
         }
 
     }

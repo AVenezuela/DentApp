@@ -23,9 +23,9 @@ namespace DentApp.Domain.Services
             _userRepository.Dispose();
         }
 
-        public async Task<Employee> GetByID(ObjectId id)
+        public async Task<Employee> GetAllWithoutLogin()
         {
-            return await _userRepository.GetById(id);
+            throw new NotImplementedException();
         }
     }
 }

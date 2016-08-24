@@ -7,6 +7,6 @@ namespace DentApp.Domain.Interfaces.Service
 {
     public interface IEmployeeService: IEntityService<Employee>, IDisposable
     {
-        Task<Employee> GetByID(ObjectId id);        
+        Task<Employee> GetAllWithoutLogin();        
     }
 }

@@ -12,7 +12,7 @@ namespace DentApp.Domain.Interfaces.Repository
         Task<TEntity> Add(TEntity obj);
         Task<TEntity> GetById(ObjectId id);
         Task<IEnumerable<TEntity>> GetAll();
-        Task<TEntity> Edit(TEntity obj);
+        Task<TEntity> Update(TEntity obj);
         void Delete(TEntity obj);
         Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate);
         Task<TEntity> FindSingle(Expression<Func<TEntity, bool>> predicate);

@@ -34,6 +34,7 @@ namespace DentApp.CrossCutting.IoC
             container.Register<IHttpContextAccessor, HttpContextAccessor>(Lifestyle.Singleton);
             container.Register<IIdentityHelper, IdentityHelper>(Lifestyle.Singleton);
             
+            container.Register<IEmployeeAppService, EmployeeAppService>(Lifestyle.Scoped);
             container.Register<IEmployeeService, EmployeeService>(Lifestyle.Scoped);
             container.Register<IEmployeeRepository, EmployeeRepository>(Lifestyle.Scoped);
 

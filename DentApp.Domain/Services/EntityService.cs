@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DentApp.Domain.Entities;
 using DentApp.Domain.Interfaces.Repository;
 using DentApp.Domain.Interfaces.Service;
+using MongoDB.Bson;
 
 namespace DentApp.Domain.Services
 {
@@ -19,33 +20,39 @@ namespace DentApp.Domain.Services
             _repository = repository;
         }
 
-        public async Task<T> Create(T entity)
+        public async Task<T> Add(T entity)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException("entity");
-            }
+            checkIfIsNull(entity);
             await _repository.Add(entity);
             return entity;
         }
 
+        public async Task<T> GetById(ObjectId id)
+        {            
+            return await _repository.GetById(id);
+        }
 
         public async Task<T> Update(T entity)
         {
-            if (entity == null) throw new ArgumentNullException("entity");
-            await _repository.Edit(entity);
+            checkIfIsNull(entity);
+            await _repository.Update(entity);
             return entity;
         }
 
         public void Delete(T entity)
         {
-            if (entity == null) throw new ArgumentNullException("entity");
+            checkIfIsNull(entity);
             _repository.Delete(entity);
         }
 
         public Task<IEnumerable<T>> GetAll()
         {
             return _repository.GetAll();
+        }
+
+        private void checkIfIsNull(T entity)
+        {
+            if (object.ReferenceEquals(entity, null)) throw new ArgumentNullException("entity");
         }
     }
 }
