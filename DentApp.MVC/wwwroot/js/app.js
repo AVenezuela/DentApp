@@ -8,13 +8,13 @@
 
             //$urlRouterProvider.otherwise('');
             $stateProvider
-                .state('UserCreate', {
-                    url: "/?UserCreate",
-                    templateUrl: '/User/Create/',
-                    controller: userCreateController
+                .state('EmployeeCreate', {
+                    url: "/?EmployeeCreate",
+                    templateUrl: '/Employee/Create/',
+                    controller: employeeController
                 });
         })
-        .controller('homeCtrl', homeController)
+        .controller('homeCtrl', homeController);
     //.directive('dhxTemplate', templateDirective)
 
     //setDirectives(app);
@@ -42,7 +42,7 @@
             'contrastLightColors': undefined
         });
         $mdThemingProvider.theme('default')
-            .primaryPalette('amazingPaletteName')
+            .primaryPalette('amazingPaletteName');
     }
 
 })(angular);

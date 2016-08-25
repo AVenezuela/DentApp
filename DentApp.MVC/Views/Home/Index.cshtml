@@ -61,12 +61,11 @@
 @section scripts {
     <environment names="Development">                
         <script src="~/js/controllers/homeController.js" asp-append-version="true"></script>
-        <script src="~/js/controllers/User/userCreateController.js" asp-append-version="true"></script>       
+        <script src="~/js/controllers/employeeController.js" asp-append-version="true"></script>       
         <script src="~/js/app.js" asp-append-version="true"></script> 
     </environment>
     <environment names="Staging,Production">                
-        <script src="~/js/controllers/controllers.min.js" asp-append-version="true"></script>
-        <script src="~/js/controllers/User/userCtrl.min.js" asp-append-version="true"></script>
+        <script src="~/js/controllers/ctrls.min.js" asp-append-version="true"></script>        
         <script src="~/js/app.min.js" asp-append-version="true"></script>
     </environment>
 }

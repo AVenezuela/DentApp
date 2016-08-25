@@ -6,9 +6,9 @@
     ]
   },
   {
-    "outputFileName": "wwwroot/js/site.min.js",
+    "outputFileName": "wwwroot/js/app.min.js",
     "inputFiles": [
-      "wwwroot/js/site.js"
+      "wwwroot/js/app.js"
     ],
     "minify": {
       "enabled": true,
@@ -16,33 +16,34 @@
     }
   },
   {
-    "outputFileName": "wwwroot/js/controllers/controllers.min.js",
-    "inputFiles": [
-      "wwwroot/js/controllers/homeController.js"
-    ]
-  },
-  {
-    "outputFileName": "wwwroot/js/app.min.js",
-    "inputFiles": [
-      "wwwroot/js/app.js"
-    ]
-  },
-  {
     "outputFileName": "wwwroot/js/codebase/flat.min.css",
     "inputFiles": [
       "wwwroot/js/codebase/dhtmlxscheduler_flat.css"
-    ]
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
   },
   {
-    "outputFileName": "wwwroot/js/controllers/User/userCtrl.min.js",
+    "outputFileName": "wwwroot/js/controllers/ctrls.min.js",
     "inputFiles": [
-      "wwwroot/js/controllers/User/userCreateController.js"
-    ]
+      "wwwroot/js/controllers/employeeController.js",
+      "wwwroot/js/controllers/homeController.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
   },
   {
     "outputFileName": "wwwroot/js/l.min.js",
     "inputFiles": [
       "wwwroot/js/login.js"
-    ]
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
   }
 ]

@@ -13,6 +13,6 @@ namespace DentApp.Application.ViewModels
 
     public class ActionEmployeeViewModel
     {
-        public Employee UserBag { get; set; }
+        public Employee EmployeeBag { get; set; }
     }
 }

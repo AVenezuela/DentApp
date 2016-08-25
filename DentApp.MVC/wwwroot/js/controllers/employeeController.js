@@ -1,0 +1,4 @@
+﻿function employeeController($scope) {
+    EmployeeBag = {};
+
+}
