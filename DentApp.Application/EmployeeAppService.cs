@@ -26,7 +26,7 @@ namespace DentApp.Application
 
         public async Task<ActionEmployeeViewModel> Add(ActionEmployeeViewModel model)
         {
-            await _userService.Add(model.UserBag);
+            await _userService.Add(model.EmployeeBag);
             return model;
         }
 

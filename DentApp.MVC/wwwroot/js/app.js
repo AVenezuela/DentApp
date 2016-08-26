@@ -1,20 +1,32 @@
 ﻿(function (angular, undefined) {
     "use strict";
 
-    var app = angular
+    var dentApp = angular
         .module('DentApp', ['ngMaterial', 'ui.router', 'angular.filter', 'ngMessages'])
         .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider, $locationProvider) {
             DefineTheme($mdThemingProvider);
 
             //$urlRouterProvider.otherwise('');
             $stateProvider
-                .state('EmployeeCreate', {
-                    url: "/?EmployeeCreate",
-                    templateUrl: '/Employee/Create/',
+             .state('EmployeeCreate', {
+                    url: "/EmployeeCreate",
+                    templateUrl: '/Employee/Action/',
                     controller: employeeController
-                });
+                })
+             .state('Employee', {
+                url: "/Employee",
+                templateUrl: '/Employee/Index/',
+                controller: employeeController
+             });
         })
         .controller('homeCtrl', homeController);
+
+    dentApp.run(function ($rootScope, $mdDialog) {
+        $rootScope.closeDialog = function () {
+            $mdDialog.hide();
+        };
+    });
+
     //.directive('dhxTemplate', templateDirective)
 
     //setDirectives(app);

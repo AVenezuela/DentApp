@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace DentApp.MVC.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class HomeController : BaseController
     {
 
