@@ -19,7 +19,7 @@ namespace DentApp.Infra.Data.Repository
 
         public async Task<Employee> doLogin(Login login)
         {
-            return await FindSingle(user => ((user.Login.UserName == login.UserName) && (user.Login.Password == login.Password)));
+            return await FindSingle(user => ((user.Login.UserName == login.UserName) && (user.Login.Password == login.Password) && (user.isActive)));
         }
     }
 }

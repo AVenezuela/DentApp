@@ -1,9 +1,8 @@
 ﻿(function (angular, undefined) {
     "use strict";
-
-    var dentApp = angular
+    var _dentApp = angular
         .module('DentApp', ['ngMaterial', 'ui.router', 'angular.filter', 'ngMessages'])
-        .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider, $locationProvider) {
+        .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
             DefineTheme($mdThemingProvider);
 
             //$urlRouterProvider.otherwise('');
@@ -21,7 +20,7 @@
         })
         .controller('homeCtrl', homeController);
 
-    dentApp.run(function ($rootScope, $mdDialog) {
+    _dentApp.run(function ($rootScope, $mdDialog) {
         $rootScope.closeDialog = function () {
             $mdDialog.hide();
         };
