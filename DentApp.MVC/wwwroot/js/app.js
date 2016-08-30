@@ -25,6 +25,10 @@
         $rootScope.closeDialog = function () {
             $mdDialog.hide();
         };
+
+        $rootScope.getAPIURL = function(){
+            return "http://localhost:1111";
+        }
     });
 
     //.directive('dhxTemplate', templateDirective)

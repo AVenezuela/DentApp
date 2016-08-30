@@ -42,6 +42,7 @@ namespace DentApp.API
             services.AddSingleton<IControllerActivator>(new SimpleInjectorControllerActivator(container));
 
             services.AddMvc();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
@@ -55,6 +56,8 @@ namespace DentApp.API
             app.UseApplicationInsightsRequestTelemetry();
 
             app.UseApplicationInsightsExceptionTelemetry();
+
+            app.UseCors(builder => builder.WithOrigins("http://localhost:2222/").AllowAnyHeader());
 
             app.UseMvc();
         }

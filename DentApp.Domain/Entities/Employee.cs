@@ -13,13 +13,14 @@ namespace DentApp.Domain.Entities
 
         [Required(ErrorMessage = "Informar o e-mail")]
         [EmailAddress(ErrorMessage = "Informar um e-mail válido")]
-        public string eMail { get; set; }
+        public string Email { get; set; }
 
         public Login Login { get; set; }
 
-        public IEnumerable<Phone> PhoneNumbers { get; set; }
+        public IEnumerable<Phone> Phones { get; set; }
         public IEnumerable<Address> Addresses { get; set; }
         public IEnumerable<Role> Roles { get; set; }
+        public string Additional { get; set; }
         public bool isActive { get; set; }
     }
 }
