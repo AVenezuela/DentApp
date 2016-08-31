@@ -2,7 +2,10 @@
     "use strict";
     var _dentApp = angular
         .module('DentApp', ['ngMaterial', 'ui.router', 'angular.filter', 'ngMessages'])
-        .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
+        .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider, $httpProvider) {
+            $httpProvider.defaults.useXDomain = true;
+            delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
             DefineTheme($mdThemingProvider);
 
             //$urlRouterProvider.otherwise('');

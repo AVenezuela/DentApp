@@ -24,9 +24,9 @@ namespace DentApp.Application
             return await _userService.GetById(new ObjectId(id));
         }
 
-        public async Task<ActionEmployeeViewModel> Add(ActionEmployeeViewModel model)
+        public async Task<Employee> Add(Employee model)
         {
-            await _userService.Add(model.EmployeeBag);
+            await _userService.Add(model);
             return model;
         }
 

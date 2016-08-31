@@ -11,8 +11,8 @@ namespace DentApp.Application.ViewModels
         public IEnumerable<Employee> ListUserBag { get; set; }
     }
 
-    public class ActionEmployeeViewModel
+    public class ActionEmployeeViewModel : Employee
     {
-        public Employee EmployeeBag { get; set; }
+        
     }
 }

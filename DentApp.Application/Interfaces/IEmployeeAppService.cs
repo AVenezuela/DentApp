@@ -10,7 +10,7 @@ namespace DentApp.Application.Interfaces
 {
     public interface IEmployeeAppService : IDisposable
     {
-        Task<ActionEmployeeViewModel> Add(ActionEmployeeViewModel model);
+        Task<Employee> Add(Employee model);
         Task<Employee> GetByID(string id);
     }
 }

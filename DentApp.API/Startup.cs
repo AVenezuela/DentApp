@@ -29,7 +29,7 @@ namespace DentApp.API
             }
 
             builder.AddEnvironmentVariables();
-            Configuration = builder.Build();
+            Configuration = builder.Build();            
             container = new Container();
         }        
 
@@ -41,8 +41,12 @@ namespace DentApp.API
 
             services.AddSingleton<IControllerActivator>(new SimpleInjectorControllerActivator(container));
 
-            services.AddMvc();
-            services.AddCors();
+            services.AddMvc();            
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("http://localhost:2222/"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
@@ -57,8 +61,7 @@ namespace DentApp.API
 
             app.UseApplicationInsightsExceptionTelemetry();
 
-            app.UseCors(builder => builder.WithOrigins("http://localhost:2222/").AllowAnyHeader());
-
+            app.UseCors("AllowSpecificOrigin");
             app.UseMvc();
         }
     }

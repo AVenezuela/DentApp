@@ -7,10 +7,7 @@
             scope: $scope,
             preserveScope: true,
             controller: function ($scope, $mdDialog) {
-                $scope.addBolo = function () {
-                    //$boloService.add($scope.Bolo)
-                    $scope.EmployeeBag = {}
-                }
+                
             },
             templateUrl: '/Employee/Action/'
         });
@@ -55,24 +52,19 @@
 
     $scope.Save = function () {
         var configMethod = ($scope.EmployeeBag._id) ? 'PUT' : 'POST';
-        var model = {
-            EmployeeBag: $scope.EmployeeBag
-        };
-        $http({
-            method: configMethod,
-            url: $scope.getAPIURL() + '/api/Employee/Add',
-            data: model,
-            headers: { 'Content-Type': 'application/json' }
-        }).then(successCallback, errorCallback);
+        console.clear()
+        console.log($scope.EmployeeBag)
+        $http.post($scope.getAPIURL() + '/api/Employee', $scope.EmployeeBag).then(successCallback, errorCallback);
     }
 
     function successCallback(response) {
         $scope.EmployeeBag = response.data;
-        toast("Foi");
+        //toast("Foi");
     }
 
     function errorCallback(response) {
-        toast(response)
+        alert(0)
+        //toast(response)
     }
 
     function toast(message) {
