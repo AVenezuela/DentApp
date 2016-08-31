@@ -7,6 +7,7 @@ using SimpleInjector;
 using SimpleInjector.Integration.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using DentApp.CrossCutting.IoC;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 
 namespace DentApp.API
 {
@@ -35,18 +36,10 @@ namespace DentApp.API
 
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
-        {
-            // Add framework services.
+        {            
             services.AddApplicationInsightsTelemetry(Configuration);
-
             services.AddSingleton<IControllerActivator>(new SimpleInjectorControllerActivator(container));
-
-            services.AddMvc();            
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowSpecificOrigin",
-                    builder => builder.WithOrigins("http://localhost:2222/"));
-            });
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
@@ -60,8 +53,6 @@ namespace DentApp.API
             app.UseApplicationInsightsRequestTelemetry();
 
             app.UseApplicationInsightsExceptionTelemetry();
-
-            app.UseCors("AllowSpecificOrigin");
             app.UseMvc();
         }
     }

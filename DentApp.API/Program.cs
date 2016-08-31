@@ -17,7 +17,7 @@ namespace DentApp.API
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
-                //.UseUrls("http://localhost:1111")
+                .UseUrls("http://localhost:1111/")
                 .Build();
 
             host.Run();

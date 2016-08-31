@@ -15,9 +15,12 @@
 
     $scope.Phone = {
         Number: undefined,
-        isNumberValid: function () {        
-            var phone = $scope.employeeForm.phoneNumber;        
-            return ((!phone.$valid) || (phone.$isEmpty(phone.$viewValue)));
+        isNumberValid: function () {
+            if($scope.employeeForm)
+            {                    
+                var phone = $scope.employeeForm.phoneNumber;        
+                return ((!phone.$valid) || (phone.$isEmpty(phone.$viewValue)));
+            }
         },
         list: $scope.EmployeeBag.Phones = $scope.EmployeeBag.Phones || [],
         add: function () {
@@ -54,7 +57,8 @@
         var configMethod = ($scope.EmployeeBag._id) ? 'PUT' : 'POST';
         console.clear()
         console.log($scope.EmployeeBag)
-        $http.post($scope.getAPIURL() + '/api/Employee', $scope.EmployeeBag).then(successCallback, errorCallback);
+        $http.post($scope.getAPIURL() + '/api/Employee', $scope.EmployeeBag)
+             .then(successCallback, errorCallback);
     }
 
     function successCallback(response) {

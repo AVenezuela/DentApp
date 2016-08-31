@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Cors;
 
 namespace DentApp.API.Controllers
 {
-    [EnableCors("AllowSpecificOrigin")]
     [Route("api/[controller]")]
     public class EmployeeController : Controller
     {
@@ -27,11 +26,10 @@ namespace DentApp.API.Controllers
         public async Task<Employee> Create([FromBody] Employee model)
         {
             if (model == null)
-            {
                 throw new ArgumentNullException("Operação inválida");
-            }
 
-            await _userAppService.Add(model);
+            if(ModelState.IsValid)
+                await _userAppService.Add(model);
 
             return model;
         }
