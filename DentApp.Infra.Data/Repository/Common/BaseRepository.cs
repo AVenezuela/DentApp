@@ -39,6 +39,11 @@ namespace DentApp.Infra.Data.Repository
             return await _collection.Find(predicate).ToListAsync();
         }
 
+        public async Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate, ProjectionDefinition<TEntity, TEntity> projection)
+        {
+            return await _collection.Find(predicate).Project(projection).ToListAsync();
+        }
+
         public async Task<TEntity> FindSingle(Expression<Func<TEntity, bool>> predicate)
         {
             return await _collection.Find(predicate).SingleOrDefaultAsync();

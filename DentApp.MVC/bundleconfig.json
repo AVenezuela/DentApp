@@ -8,7 +8,9 @@
   {
     "outputFileName": "wwwroot/js/app.min.js",
     "inputFiles": [
-      "wwwroot/js/app.js"
+      "wwwroot/js/app.js",
+      "wwwroot/js/pagination.min.js",
+      "wwwroot/js/dataGrid.min.js"
     ],
     "minify": {
       "enabled": true,

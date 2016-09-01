@@ -1,32 +1,57 @@
 ﻿<div ng-app="DentApp" layout="column" ng-controller="homeCtrl">
-    <md-toolbar class="md-medium-tall">
-        <div layout="column" class="md-toolbar-tools-bottom inset">
-            <h2 show-gt-md>D</h2>
-        </div>
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">        
+        <h2>
+          <span>D</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">          
+          <md-icon class="material-icons">favorite</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">more_vert</md-icon>
+        </md-button>
+      </div>
     </md-toolbar>
-    <div layout="column">
-        <md-sidenav class="md-sidenav-left"
+    <div layout="row">
+        <md-sidenav flex="10" class="md-sidenav-left"
                     md-component-id="left"
-                    md-is-locked-open="$mdMedia('gt-md')"
-                    md-whiteframe="2">
+                    md-is-locked-open="$mdMedia('gt-md')">
             <md-content flex role="navigation">
                 <ul class="docs-menu">
                     <li class="parent-list-item">
-                        <h2 class="menu-heading md-subhead" ui-sref="Employee">
-                            User
-                        </h2>
+                        <h2 class="menu-heading md-subhead" ui-sref="Employee">Funcionário</h2>
+                        <!--
                         <menu-link section="section"></menu-link>
                         <ul class="menu-nested-list">
                             <li>
                                 <menu-link section="child">Create</menu-link>
                             </li>
                         </ul>
+                        -->
+                    </li>
+                    <li class="parent-list-item">
+                        <h2 class="menu-heading md-subhead" ui-sref="Employee">Agenda</h2>
+                        <!--
+                        <menu-link section="section"></menu-link>
+                        <ul class="menu-nested-list">
+                            <li>
+                                <menu-link section="child">Create</menu-link>
+                            </li>
+                        </ul>
+                        -->
+                    </li>
+                    <li class="parent-list-item">
+                        <h2 class="menu-heading md-subhead" ui-sref="Employee">Finança</h2>
+                    </li>
+                    <li class="parent-list-item">
+                        <h2 class="menu-heading md-subhead" ui-sref="Employee">Estoque</h2>
                     </li>
                 </ul>
             </md-content>
         </md-sidenav>
-        <md-content flex md-scroll-y>
-            <ui-view layout="column" layout-padding></ui-view>
+        <md-content flex= md-scroll-y style="border:solid 1pt orange">
+            <ui-view layout-padding></ui-view>
         </md-content>
     </div>
     <md-fab-speed-dial md-direction="up" md-open="ctrl.isOpen" class="md-scale md-fab-bottom-right" ng-class="{ 'md-hover-full': true }">

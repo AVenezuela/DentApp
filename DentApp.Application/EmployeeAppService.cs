@@ -24,6 +24,11 @@ namespace DentApp.Application
             return await _userService.GetById(new ObjectId(id));
         }
 
+        public async Task<IEnumerable<Employee>> GetAll()
+        {
+            return await _userService.GetAllWithoutLogin();
+        }
+
         public async Task<Employee> Add(Employee model)
         {
             await _userService.Add(model);

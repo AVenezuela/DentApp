@@ -10,5 +10,6 @@ namespace DentApp.Domain.Interfaces.Repository
     public interface IEmployeeRepository : IBaseRepository<Employee>
     {
         Task<Employee> GetByLogin(Login login);
+        Task<IEnumerable<Employee>> GetAllWithoutLogin();
     }
 }

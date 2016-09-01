@@ -55,23 +55,16 @@
 
     $scope.Save = function () {
         var configMethod = ($scope.EmployeeBag._id) ? 'PUT' : 'POST';
-        console.clear()
-        console.log($scope.EmployeeBag)
         $http.post($scope.getAPIURL() + '/api/Employee', $scope.EmployeeBag)
              .then(successCallback, errorCallback);
     }
 
     function successCallback(response) {
         $scope.EmployeeBag = response.data;
-        //toast("Foi");
+        $scope.toastMessage("Sucesso!");
     }
 
-    function errorCallback(response) {
-        alert(0)
-        //toast(response)
-    }
-
-    function toast(message) {
-        $mdToast.show($mdToast.simple().textContent(message));
+    function errorCallback(response) {        
+        $scope.toastMessage(response);
     }
 }

@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
 using DentApp.Domain.Entities;
-using MongoDB.Bson;
 using System;
+using System.Collections.Generic;
 
 namespace DentApp.Domain.Interfaces.Service
 {
     public interface IEmployeeService: IEntityService<Employee>, IDisposable
     {
-        Task<Employee> GetAllWithoutLogin();        
+        Task<IEnumerable<Employee>> GetAllWithoutLogin();        
     }
 }

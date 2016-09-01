@@ -38,3 +38,13 @@
                 bottom: 7px;
                 opacity: 1;
             }
+            
+.side-nav{
+    width: 100px
+}
+.docs-menu{
+    border: solid 1pt orange;
+}
+.parent-list-item{
+    cursor: pointer;
+}

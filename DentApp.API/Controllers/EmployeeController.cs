@@ -4,10 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DentApp.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
-using DentApp.Application;
 using DentApp.Application.Interfaces;
-using DentApp.Application.ViewModels;
-using Microsoft.AspNetCore.Cors;
 
 namespace DentApp.API.Controllers
 {
@@ -20,8 +17,6 @@ namespace DentApp.API.Controllers
         {
             _userAppService = userAppService;
         }
-
-
         [HttpPost]
         public async Task<Employee> Create([FromBody] Employee model)
         {
@@ -32,12 +27,16 @@ namespace DentApp.API.Controllers
                 await _userAppService.Add(model);
 
             return model;
-        }
-        
+        }        
         [HttpGet("{id}")]
         public async Task<Employee> Get(string id)
         {
             return await _userAppService.GetByID(id);
+        }
+        [HttpGet("")]
+        public async Task<IEnumerable<Employee>> GetAll()
+        {
+            return await _userAppService.GetAll();
         }
 
     }

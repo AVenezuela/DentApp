@@ -1,31 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using DentApp.Domain.Entities;
 using DentApp.Domain.Interfaces.Repository;
 using DentApp.Domain.Interfaces.Service;
-using MongoDB.Bson;
 
 namespace DentApp.Domain.Services
 {
     public class EmployeeService : EntityService<Employee>, IEntityService<Employee>, IEmployeeService
     {
-        protected IEmployeeRepository _userRepository;
+        protected IEmployeeRepository _employeeRepository;
 
-        public EmployeeService(IEmployeeRepository userRepository) : base(userRepository)
+        public EmployeeService(IEmployeeRepository employeeRepository) : base(employeeRepository)
         {
-            _userRepository = userRepository;            
+            _employeeRepository = employeeRepository;            
         }
 
         public void Dispose()
         {
-            _userRepository.Dispose();
+            _employeeRepository.Dispose();
         }
 
-        public async Task<Employee> GetAllWithoutLogin()
+        public async Task<IEnumerable<Employee>> GetAllWithoutLogin()
         {
-            throw new NotImplementedException();
+            return await _employeeRepository.GetAllWithoutLogin();
         }
     }
 }
