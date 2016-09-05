@@ -5,11 +5,9 @@ using System.Threading.Tasks;
 using DentApp.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using DentApp.Application.Interfaces;
-using Microsoft.AspNetCore.Cors;
 
 namespace DentApp.API.Controllers
 {
-    [EnableCors("AllowSpecificOrigin")]
     [Route("api/[controller]")]
     public class EmployeeController : Controller
     {

@@ -37,10 +37,15 @@ namespace DentApp.API
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
+            var corsBuilder = new CorsPolicyBuilder();
+            corsBuilder.AllowAnyHeader();
+            corsBuilder.AllowAnyMethod();
+            corsBuilder.AllowAnyOrigin();
+            corsBuilder.AllowCredentials();
+
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowSpecificOrigin",
-                builder => builder.WithOrigins("http://localhost:2222"));
+                options.AddPolicy("AllowAll", corsBuilder.Build());
             });
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddSingleton<IControllerActivator>(new SimpleInjectorControllerActivator(container));
@@ -50,11 +55,7 @@ namespace DentApp.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            app.UseCors("AllowSpecificOrigin");
-            
-            app.UseCors(builder =>
-                builder.WithOrigins("http://localhost:2222").AllowAnyHeader()
-            );
+            app.UseCors("AllowAll");
 
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();

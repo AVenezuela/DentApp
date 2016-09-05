@@ -62,11 +62,12 @@
     }
 
     function successCallback(response) {
-        $scope.EmployeeBag = response.data;
+        $scope.EmployeeBag = response.data || {};
         $scope.toastMessage("Sucesso!");
     }
 
-    function errorCallback(response) {        
+    function errorCallback(response) {      
+        alert(1)  
         $scope.toastMessage(response);
     }
 }
