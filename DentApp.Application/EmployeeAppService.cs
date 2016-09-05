@@ -35,6 +35,12 @@ namespace DentApp.Application
             return model;
         }
 
+        public async Task<Employee> Update(Employee model)
+        {
+            await _userService.Update(model);
+            return model;
+        }
+
         public void Dispose()
         {
             _userService.Dispose();

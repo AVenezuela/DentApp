@@ -62,7 +62,7 @@ namespace DentApp.MVC
                 options.IdleTimeout = TimeSpan.FromMinutes(timeOut);
             });
 
-            services.AddMvc();
+             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

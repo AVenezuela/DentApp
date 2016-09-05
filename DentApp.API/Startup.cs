@@ -31,6 +31,7 @@ namespace DentApp.API
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+
             container = new Container();
         }
 
@@ -49,6 +50,9 @@ namespace DentApp.API
             });
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddSingleton<IControllerActivator>(new SimpleInjectorControllerActivator(container));
+
+            services.AddScoped<InvalidModelStateFilterAttribute>();
+
             services.AddMvc();
         }
 

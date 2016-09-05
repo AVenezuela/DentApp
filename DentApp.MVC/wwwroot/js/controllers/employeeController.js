@@ -1,20 +1,18 @@
 ﻿function employeeController($rootScope, $scope, $mdDialog, $http, $mdToast) {
-    $scope.EmployeeBag = {}
+    $scope.EmployeeBag = {}    
     $scope.showHints = true;    
 
     $scope.newEmployee = function () {
         $mdDialog.show({
             scope: $scope,
             preserveScope: true,
-            controller: function ($scope, $mdDialog) {
-                
-            },
+            controller: function ($scope, $mdDialog) {},
             templateUrl: '/Employee/Action/'
         });
     }
 
     $scope.Phone = {
-        Number: undefined,
+        number: undefined,
         isNumberValid: function () {
             if($scope.employeeForm)
             {                    
@@ -22,14 +20,14 @@
                 return ((!phone.$valid) || (phone.$isEmpty(phone.$viewValue)));
             }
         },
-        list: $scope.EmployeeBag.Phones = $scope.EmployeeBag.Phones || [],
+        list: $scope.EmployeeBag.phones = $scope.EmployeeBag.phones || [],
         add: function () {
             var phone = {
-                Number: this.Number,
-                isDefault: (this.list.length == 0)
+                number: this.number,
+                isdefault: (this.list.length == 0)
             }
             this.list.push(phone)
-            this.Number = undefined;
+            this.number = undefined;
         },
         remove: function (idx) {
             this.list.splice(idx, 1);
@@ -38,10 +36,10 @@
 
     $scope.Address = {
         Info: {},
-        list: $scope.EmployeeBag.Addresses = $scope.EmployeeBag.Addresses || [],
+        list: $scope.EmployeeBag.addresses = $scope.EmployeeBag.addresses || [],
         add: function () {
             console.clear();
-            this.Info.isDefault = (this.list.length == 0);
+            this.Info.isdefault = (this.list.length == 0);
             console.log('info', this.Info);
             this.list.push(this.Info)
             this.Info = {};
@@ -54,10 +52,11 @@
         }
     }
 
-    $scope.Save = function () {
-        //var configMethod = ($scope.EmployeeBag._id) ? 'PUT' : 'POST';
+    $scope.Save = function () {        
         $http.defaults.useXDomain = true;
-        $http.post($scope.getAPIURL() + '/api/Employee', $scope.EmployeeBag)
+        var func = ($scope.EmployeeBag.id)? $http.put : $http.post;
+         
+        func($scope.getAPIURL() + '/api/Employee', $scope.EmployeeBag)
              .then(successCallback, errorCallback);
     }
 

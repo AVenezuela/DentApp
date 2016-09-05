@@ -11,7 +11,7 @@
 <md-content layout-gt-sm="row" layout-padding>
     <md-input-container class="md-block" flex-gt-xs>
         <label asp-for="Name"></label>
-        <input asp-for="Name" required ng-model="EmployeeBag.Name">
+        <input asp-for="Name" required ng-model="EmployeeBag.name">
     </md-input-container>
 </md-content>
 <md-content layout-padding>
@@ -19,26 +19,26 @@
             <div layout-gt-xs="row">
                 <md-input-container class="md-block" flex-gt-xs>
                     <label asp-for="Email"></label>
-                    <input asp-for="Email" required ng-model="EmployeeBag.Email" type="email">
+                    <input asp-for="Email" required ng-model="EmployeeBag.email" type="email">
                 </md-input-container>
             </div>
             <div layout-gt-xs="column" class="md-primary md-hue-50">
                 <md-input-container class="md-block" flex-gt-xs>
                     <label asp-for="Login.UserName"></label>
-                    <input asp-for="Login.UserName" required ng-model="EmployeeBag.Login.UserName" name="employeUser" autocomplete="off">
+                    <input asp-for="Login.UserName" required ng-model="EmployeeBag.login.userName" name="employeUser" autocomplete="off">
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-xs>
                     <label asp-for="Login.Password"></label>
-                    <input asp-for="Login.Password" required ng-model="EmployeeBag.Login.Password" name="employePass" autocomplete="off" type="password">
+                    <input asp-for="Login.Password" required ng-model="EmployeeBag.login.password" name="employePass" autocomplete="off" type="password">
                 </md-input-container>
             </div>
             <div layout="column">
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Telefone</label>
-                        <input name="phoneNumber" ng-model="Phone.Number" ng-pattern="/^[(][0-9]{2}[)] [0-9]{5}-[0-9]{4}$/">
+                        <input name="phoneNumber" ng-model="Phone.number" ng-pattern="/^[(][0-9]{2}[)] [0-9]{5}-[0-9]{4}$/">
                         <div class="hint" ng-show="showHints">(##) #####-####</div>
-                        <div ng-messages="Phone.Number.$error" ng-hide="showHints">
+                        <div ng-messages="Phone.number.$error" ng-hide="showHints">
                             <div ng-message="pattern">(##) #####-#### - informe um telefone válido.</div>
                         </div>
                     </md-input-container>
@@ -47,8 +47,8 @@
                     </md-button>
                 </div>
                 <md-list>
-                    <md-list-item ng-repeat="phone in EmployeeBag.Phones" class="row">
-                        <label flex-gt-sm><input type="radio" name="isPhoneDefault" ng-model="phone.isDefault" ng-value="true" />{{phone.Number}}</label>
+                    <md-list-item ng-repeat="phone in EmployeeBag.phones" class="row">
+                        <label flex-gt-sm><input type="radio" name="isPhoneDefault" ng-model="phone.isdefault" ng-value="true" />{{phone.number}}</label>
                         <md-button class="md-icon-button md-primary" ng-click="Phone.remove($index)">
                             <md-icon class="material-icons">remove_circle_outline</md-icon>
                         </md-button>
@@ -59,32 +59,32 @@
                 <div layout="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Endereço</label>
-                        <input ng-model="Address.Info.Street">
+                        <input ng-model="Address.Info.street">
                     </md-input-container>
                     <md-input-container class="md-block">
                         <label>Numero</label>
-                        <input ng-model="Address.Info.Number">
+                        <input ng-model="Address.Info.number">
                     </md-input-container>
                 </div>
                 <md-input-container md-no-float class="md-block">
-                    <input ng-model="Address.Info.Additional" placeholder="Complemento">
+                    <input ng-model="Address.Info.additional" placeholder="Complemento">
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Cidade</label>
-                    <input ng-model="Address.Info.City">
+                    <input ng-model="Address.Info.city">
                 </md-input-container>
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Bairro</label>
-                        <input ng-model="Address.Info.Neighborhood">
+                        <input ng-model="Address.Info.neighborhood">
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Estado</label>
-                        <input ng-model="Address.Info.State">
+                        <input ng-model="Address.Info.state">
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>CEP</label>
-                        <input name="postalCode" ng-model="Address.Info.PostalCode" ng-pattern="/^[0-9]{5}-[0-9]{3}$/" md-maxlength="9">
+                        <input name="postalCode" ng-model="Address.Info.postalcode" ng-pattern="/^[0-9]{5}-[0-9]{3}$/" md-maxlength="9">
                         <div ng-messages="addressForm.postalCode.$error" role="alert" multiple>
                             <div ng-message="required" class="my-message">You must supply a postal code.</div>
                             <div ng-message="pattern" class="my-message">
@@ -100,8 +100,8 @@
                 <md-button class="md-raised" layout-align="end end" ng-click="Address.add()">Adicionar Endereço</md-button>
             </div>
             <md-list>
-                <md-list-item ng-repeat="address in EmployeeBag.Addresses" class="row">
-                    <label flex-gt-sm><input type="radio" name="isAddressDefault" ng-model="address.isDefault" ng-value="true" />{{address.Street}}, {{address.Number}}</label>
+                <md-list-item ng-repeat="address in EmployeeBag.addresses" class="row">
+                    <label flex-gt-sm><input type="radio" name="isAddressDefault" ng-model="address.isdefault" ng-value="true" />{{address.street}}, {{address.number}}</label>
                     <md-button class="md-icon-button md-primary" ng-click="Address.remove($index)">
                         <md-icon class="material-icons">remove_circle_outline</md-icon>
                     </md-button>
@@ -109,7 +109,7 @@
             </md-list>
             <md-input-container class="md-block">
                 <label>Adicional Informativo</label>
-                <textarea ng-model="EmployeeBag.Additional" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                <textarea ng-model="EmployeeBag.additional" md-maxlength="150" rows="5" md-select-on-focus></textarea>
             </md-input-container>
         
     </div>
