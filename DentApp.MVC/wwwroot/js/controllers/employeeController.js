@@ -41,6 +41,7 @@
         list: $scope.EmployeeBag.Addresses = $scope.EmployeeBag.Addresses || [],
         add: function () {
             console.clear();
+            this.Info.isDefault = (this.list.length == 0);
             console.log('info', this.Info);
             this.list.push(this.Info)
             this.Info = {};
@@ -54,7 +55,8 @@
     }
 
     $scope.Save = function () {
-        var configMethod = ($scope.EmployeeBag._id) ? 'PUT' : 'POST';
+        //var configMethod = ($scope.EmployeeBag._id) ? 'PUT' : 'POST';
+        $http.defaults.useXDomain = true;
         $http.post($scope.getAPIURL() + '/api/Employee', $scope.EmployeeBag)
              .then(successCallback, errorCallback);
     }

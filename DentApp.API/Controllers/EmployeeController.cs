@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using DentApp.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using DentApp.Application.Interfaces;
+using Microsoft.AspNetCore.Cors;
 
 namespace DentApp.API.Controllers
 {
+    [EnableCors("AllowSpecificOrigin")]
     [Route("api/[controller]")]
     public class EmployeeController : Controller
     {
@@ -18,7 +20,7 @@ namespace DentApp.API.Controllers
             _userAppService = userAppService;
         }
         [HttpPost]
-        public async Task<Employee> Create([FromBody] Employee model)
+        public async Task<Employee> Create(Employee model)
         {
             if (model == null)
                 throw new ArgumentNullException("Operação inválida");

@@ -30,13 +30,18 @@ namespace DentApp.API
             }
 
             builder.AddEnvironmentVariables();
-            Configuration = builder.Build();            
+            Configuration = builder.Build();
             container = new Container();
-        }        
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
-        {            
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                builder => builder.WithOrigins("http://localhost:2222"));
+            });
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddSingleton<IControllerActivator>(new SimpleInjectorControllerActivator(container));
             services.AddMvc();
@@ -45,14 +50,20 @@ namespace DentApp.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseCors("AllowSpecificOrigin");
+            
+            app.UseCors(builder =>
+                builder.WithOrigins("http://localhost:2222").AllowAnyHeader()
+            );
+
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
             BootStrapperAPI.RegisterServices(app, container);
 
             app.UseApplicationInsightsRequestTelemetry();
-
             app.UseApplicationInsightsExceptionTelemetry();
+
             app.UseMvc();
         }
     }

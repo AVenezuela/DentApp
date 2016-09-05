@@ -48,7 +48,7 @@
                 </div>
                 <md-list>
                     <md-list-item ng-repeat="phone in EmployeeBag.Phones" class="row">
-                        <label flex-gt-sm><input type="radio" name="isdefault" ng-model="phone.isDefault" ng-value="true" />{{phone.Number}}</label>
+                        <label flex-gt-sm><input type="radio" name="isPhoneDefault" ng-model="phone.isDefault" ng-value="true" />{{phone.Number}}</label>
                         <md-button class="md-icon-button md-primary" ng-click="Phone.remove($index)">
                             <md-icon class="material-icons">remove_circle_outline</md-icon>
                         </md-button>
@@ -101,7 +101,7 @@
             </div>
             <md-list>
                 <md-list-item ng-repeat="address in EmployeeBag.Addresses" class="row">
-                    <label flex-gt-sm><input type="radio" name="isdefault" ng-model="address.isDefault" ng-value="true" />{{address.Street}}, {{address.Number}}</label>
+                    <label flex-gt-sm><input type="radio" name="isAddressDefault" ng-model="address.isDefault" ng-value="true" />{{address.Street}}, {{address.Number}}</label>
                     <md-button class="md-icon-button md-primary" ng-click="Address.remove($index)">
                         <md-icon class="material-icons">remove_circle_outline</md-icon>
                     </md-button>
