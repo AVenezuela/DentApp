@@ -56,7 +56,7 @@
         $http.defaults.useXDomain = true;
         var func = ($scope.EmployeeBag.id)? $http.put : $http.post;
          
-        func($scope.getAPIURL() + '/api/Employee', $scope.EmployeeBag)
+        func('/api/employee/post', $scope.EmployeeBag)
              .then(successCallback, errorCallback);
     }
 
@@ -65,8 +65,7 @@
         $scope.toastMessage("Sucesso!");
     }
 
-    function errorCallback(response) {      
-        alert(1)  
-        $scope.toastMessage(response);
+    function errorCallback(response) {        
+        $scope.handleStatusResponse(response, $scope.employeeForm);
     }
 }

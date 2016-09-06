@@ -42,6 +42,10 @@ namespace DentApp.CrossCutting.IoC
             container.Register<ILoginService, LoginService>(Lifestyle.Scoped);
             container.Register<ILoginRepository, LoginRepository>(Lifestyle.Scoped);
 
+            container.Register<IEmployeeAppService, EmployeeAppService>(Lifestyle.Scoped);
+            container.Register<IEmployeeService, EmployeeService>(Lifestyle.Scoped);
+            container.Register<IEmployeeRepository, EmployeeRepository>(Lifestyle.Scoped);
+
             container.Register<MongoDBContextOptions>(Lifestyle.Scoped);
             container.RegisterInitializer<MongoDBContextOptions>(options => 
             {

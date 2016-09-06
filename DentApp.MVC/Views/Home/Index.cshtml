@@ -1,96 +1,75 @@
-﻿<div ng-app="DentApp" layout="column" ng-controller="homeCtrl">
-    <md-toolbar class="md-hue-2">
-      <div class="md-toolbar-tools">        
-        <h2>
-          <span>D</span>
-        </h2>
-        <span flex></span>
-        <md-button class="md-icon-button" aria-label="Favorite">          
-          <md-icon class="material-icons">favorite</md-icon>
-        </md-button>
-        <md-button class="md-icon-button" aria-label="More">
-            <md-icon class="material-icons">more_vert</md-icon>
-        </md-button>
-      </div>
-    </md-toolbar>
-    <div layout="row">
-        <md-sidenav flex="10" class="md-sidenav-left"
-                    md-component-id="left"
-                    md-is-locked-open="$mdMedia('gt-md')">
-            <md-content flex role="navigation">
-                <ul class="docs-menu">
-                    <li class="parent-list-item">
-                        <h2 class="menu-heading md-subhead" ui-sref="Employee">Funcionário</h2>
-                        <!--
-                        <menu-link section="section"></menu-link>
-                        <ul class="menu-nested-list">
-                            <li>
-                                <menu-link section="child">Create</menu-link>
-                            </li>
-                        </ul>
-                        -->
-                    </li>
-                    <li class="parent-list-item">
-                        <h2 class="menu-heading md-subhead" ui-sref="Employee">Agenda</h2>
-                        <!--
-                        <menu-link section="section"></menu-link>
-                        <ul class="menu-nested-list">
-                            <li>
-                                <menu-link section="child">Create</menu-link>
-                            </li>
-                        </ul>
-                        -->
-                    </li>
-                    <li class="parent-list-item">
-                        <h2 class="menu-heading md-subhead" ui-sref="Employee">Finança</h2>
-                    </li>
-                    <li class="parent-list-item">
-                        <h2 class="menu-heading md-subhead" ui-sref="Employee">Estoque</h2>
-                    </li>
-                </ul>
-            </md-content>
-        </md-sidenav>
-        <md-content flex= md-scroll-y style="border:solid 1pt orange">
-            <ui-view layout-padding></ui-view>
-        </md-content>
+﻿<div ng-app="DentApp" layout="row" ng-controller="homeCtrl">
+    <md-sidenav layout="column" flex="15" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar class="md-hue-2">
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>D</span>
+                </h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-list>
+            <md-item ng-repeat="item in menu">
+                <md-button ui-sref="{{item.uisref}}" flex layout="row" layout-align="start start">
+                    <md-icon class="material-icons">{{item.icon}}</md-icon>
+                    <div flex layout-align="start start">{{item.title}}</div>
+                </md-button>
+            </md-item>
+            <md-divider></md-divider>
+            <md-subheader>Management</md-subheader>
+            <md-item ng-repeat="item in admin">
+                <a>
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <md-icon class="material-icons">{{item.icon}}</md-icon>
+                        </div>
+                        <div class="inset" flex>{{item.title}}</div>
+                    </md-item-content>
+                </a>
+            </md-item>
+        </md-list>
+    </md-sidenav>
+    <div layout="column" class="relative" layout-fill role="main">
+        <md-fab-speed-dial md-direction="up" md-open="ctrl.isOpen" class="md-scale md-fab-bottom-right" ng-class="{ 'md-hover-full': true }">
+            <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-primary">
+                    <md-tooltip md-direction="left">Acesso Rápido</md-tooltip>
+                    <md-icon class="material-icons">menu</md-icon>
+                </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+                <md-button aria-label="Agenda" class="md-fab md-raised md-mini">
+                    <md-tooltip md-direction="left">
+                        Agenda
+                    </md-tooltip>
+                    <i>+</i>
+                </md-button>
+                <md-button aria-label="Estoque" class="md-fab md-raised md-mini">
+                    <md-tooltip md-direction="left">
+                        Estoque
+                    </md-tooltip>
+                    <i>+</i>
+                </md-button>
+                <md-button aria-label="Finanças" class="md-fab md-raised md-mini">
+                    <md-tooltip md-direction="left">
+                        Finanças
+                    </md-tooltip>
+                    <i>+</i>
+                </md-button>
+            </md-fab-actions>
+        </md-fab-speed-dial>
+        <md-toolbar></md-toolbar>
+        <ui-view layout="column" layout-fill layout-padding  flex md-scroll-y style="border:solid 1pt orange"></ui-view>        
     </div>
-    <md-fab-speed-dial md-direction="up" md-open="ctrl.isOpen" class="md-scale md-fab-bottom-right" ng-class="{ 'md-hover-full': true }">
-        <md-fab-trigger>
-            <md-button aria-label="menu" class="md-fab md-primary">
-                <md-tooltip md-direction="left">Acesso Rápido</md-tooltip>
-                <md-icon class="material-icons">menu</md-icon>
-            </md-button>
-        </md-fab-trigger>
-        <md-fab-actions>
-            <md-button aria-label="Agenda" class="md-fab md-raised md-mini">
-                <md-tooltip md-direction="left">
-                    Agenda
-                </md-tooltip>
-                <i>+</i>
-            </md-button>
-            <md-button aria-label="Estoque" class="md-fab md-raised md-mini">
-                <md-tooltip md-direction="left">
-                    Estoque
-                </md-tooltip>
-                <i>+</i>
-            </md-button>
-            <md-button aria-label="Finanças" class="md-fab md-raised md-mini">
-                <md-tooltip md-direction="left">
-                    Finanças
-                </md-tooltip>
-                <i>+</i>
-            </md-button>
-        </md-fab-actions>
-    </md-fab-speed-dial>
 </div>
 @section scripts {
-    <environment names="Development">                
+    <environment names="Development">
         <script src="~/js/controllers/homeController.js" asp-append-version="true"></script>
-        <script src="~/js/controllers/employeeController.js" asp-append-version="true"></script>       
-        <script src="~/js/app.js" asp-append-version="true"></script> 
+        <script src="~/js/controllers/employeeController.js" asp-append-version="true"></script>
+        <script src="~/js/app.js" asp-append-version="true"></script>
     </environment>
-    <environment names="Staging,Production">                
-        <script src="~/js/controllers/ctrls.min.js" asp-append-version="true"></script>        
+    <environment names="Staging,Production">
+        <script src="~/js/controllers/ctrls.min.js" asp-append-version="true"></script>
         <script src="~/js/app.min.js" asp-append-version="true"></script>
     </environment>
 }

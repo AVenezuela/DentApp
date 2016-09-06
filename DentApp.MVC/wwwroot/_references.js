@@ -89,4 +89,3 @@
 /// <reference path="js/loading-bar.min.js" />
 /// <reference path="js/login.js" />
 /// <reference path="js/pagination.min.js" />
-/// <reference path="js/site.min.js" />

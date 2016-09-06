@@ -16,7 +16,7 @@ namespace DentApp.MVC
                 .UseIISIntegration()
                 .UseContentRoot(Directory.GetCurrentDirectory())                
                 .UseStartup<Startup>()
-                .UseUrls("http://localhost:2222")
+                //.UseUrls("http://localhost:2222")
                 .Build();
 
             host.Run();

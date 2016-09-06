@@ -53,6 +53,7 @@ namespace DentApp.MVC
 
             services.AddDistributedMemoryCache();
 
+
             double timeOut = double.MinValue;
             double.TryParse(Configuration["Session:TimeOut"], out timeOut);                
 
@@ -62,7 +63,9 @@ namespace DentApp.MVC
                 options.IdleTimeout = TimeSpan.FromMinutes(timeOut);
             });
 
-             services.AddMvc();
+            services.AddScoped<InvalidModelStateFilterAttribute>();
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace DentApp.MVC.Controllers
 {
-    //[Authorize]
+    [Authorize]
+    [Route("[controller]/[action]")]
     public class HomeController : BaseController
     {
 

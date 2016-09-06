@@ -1,11 +1,10 @@
-﻿.transparent {
-    background-color: transparent !important;
-}
-
-.content {
-    margin-top: 80px;
-    overflow: hidden;
-}
+﻿html, body{
+color: #4d260c !important;
+margin:0px;
+padding:0px;
+height:100%;
+overflow:hidden;
+}	
 
 .inputdemoErrorsAdvanced {
     /* NOTE: Check the demo's HTML to see some additional RTL support CSS */
@@ -39,12 +38,49 @@
                 opacity: 1;
             }
             
-.side-nav{
-    width: 100px
-}
 .docs-menu{
     border: solid 1pt orange;
 }
-.parent-list-item{
+.inset{
     cursor: pointer;
+    border:solid 1pt orange;
+}
+$gray: #eee;
+
+md-content.md-default-theme {
+  background-color: $gray;
+}
+md-card {
+  background-color: #fff;
+  h2:first-of-type {
+    margin-top: 0;
+  }
+}
+md-toolbar {
+  .md-button.md-default-theme {
+    border-radius: 99%; // round toolbar buttons
+  }
+}
+h2 {
+  font-weight: 400;
+}
+.md-toolbar-tools-bottom {
+  font-size: small;
+  & :last-child {
+    opacity: 0.8;
+  }
+}
+md-toolbar:not(.md-hue-1),
+.md-fab {
+  fill: #fff;
+}
+md-sidenav {
+  fill: #737373;
+  ng-md-icon {
+    position: relative;
+    top: 5px; // adjust for svg viewbox
+  }
+}
+.user-avatar {
+  border-radius: 99%;
 }

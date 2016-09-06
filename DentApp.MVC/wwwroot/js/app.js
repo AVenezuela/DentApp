@@ -6,12 +6,7 @@
             , $mdThemingProvider) {
             DefineTheme($mdThemingProvider);
 
-            $stateProvider
-                .state('EmployeeCreate', {
-                    url: "/EmployeeCreate",
-                    templateUrl: '/Employee/Action/',
-                    controller: employeeController
-                })
+            $stateProvider                
                 .state('Employee', {
                     url: "/Employee",
                     templateUrl: '/Employee/Index/',
@@ -20,27 +15,40 @@
         })
         .controller('homeCtrl', homeController);
 
-    _dentApp.config(['$httpProvider', function ($httpProvider) {
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-        $httpProvider.defaults.headers.post['Accept'] = 'application/json, text/javascript';
-        $httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';        
-        $httpProvider.defaults.headers.common['Accept'] = 'application/json, text/javascript';
-        $httpProvider.defaults.headers.common['Content-Type'] = 'application/json; charset=utf-8';        
-        $httpProvider.defaults.useXDomain = true;
-    }]);
+    //_dentApp.config(['$httpProvider', function ($httpProvider) {
+    //    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    //    $httpProvider.defaults.headers.post['Accept'] = 'application/json, text/javascript';
+    //    $httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';        
+    //    $httpProvider.defaults.headers.common['Accept'] = 'application/json, text/javascript';
+    //    $httpProvider.defaults.headers.common['Content-Type'] = 'application/json; charset=utf-8';        
+    //    $httpProvider.defaults.useXDomain = true;
+    //}]);
 
-    _dentApp.run(function ($rootScope, $mdDialog
-        , $mdToast) {
+    _dentApp.run(function ($rootScope, $mdDialog, $mdToast) {
         $rootScope.closeDialog = function () {
             $mdDialog.hide();
         };
 
-        $rootScope.getAPIURL = function () {
-            return "http://localhost:1111";
-        }
-
         $rootScope.toastMessage = function (message) {
             $mdToast.show($mdToast.simple().textContent(message));
+        }
+
+        $rootScope.handleStatusResponse = function(response, form)
+        {
+            var message = "";
+            switch (response.status) {
+                case 400:
+                    form.$setSubmitted();
+                    message = "Formulário inválido!";
+                    break;
+                case 404:
+                    message = "Ação inválida!";
+                    break;
+                default:
+                    message = "Falha não conhecida!";
+                    break;
+            }
+            $rootScope.toastMessage(message);
         }
     });
 
