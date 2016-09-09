@@ -12,12 +12,14 @@
     {
         link: '',
         title: 'Estoque',
-        icon: 'assignment'
+        icon: 'assignment',
+        uisref:"Employee"
     },
     {
         link: '',
         title: 'Financeiro',
-        icon: 'attach_money'
+        icon: 'attach_money',
+        uisref:"Employee"
     }
     ];
     $scope.admin = [

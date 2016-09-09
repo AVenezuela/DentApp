@@ -8,7 +8,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Microsoft.AspNetCore.Http;
-
 using SimpleInjector;
 using SimpleInjector.Integration.AspNetCore.Mvc;
 using DentApp.Security;
@@ -52,7 +51,6 @@ namespace DentApp.MVC
             services.AddSingleton<IViewComponentActivator>(new SimpleInjectorViewComponentActivator(container));
 
             services.AddDistributedMemoryCache();
-
 
             double timeOut = double.MinValue;
             double.TryParse(Configuration["Session:TimeOut"], out timeOut);                

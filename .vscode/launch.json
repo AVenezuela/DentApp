@@ -1,23 +1,12 @@
 {
     "version": "0.2.0",
-    "configurations": [
-        {
-            "name": ".NET Core Launch (console)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceRoot}/DentApp.Api/bin/Debug/netcoreapp1.0/DentApp.API.dll",
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "stopAtEntry": false,
-            "externalConsole": false
-        },
+    "configurations": [        
         {
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceRoot}/DentApp.Api/bin/Debug/netcoreapp1.0/DentApp.API.dll",
+            "preLaunchTask": "run",
+            "program": "${workspaceRoot}/DentApp.MVC/bin/Debug/netcoreapp1.0/DentApp.MVC.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
@@ -26,7 +15,7 @@
                 "args": "${auto-detect-url}",
                 "windows": {
                     "command": "cmd.exe",
-                    "args": "/C start ${auto-detect-url}"
+                    "args": "/C dotnet run"
                 },
                 "osx": {
                     "command": "open"
